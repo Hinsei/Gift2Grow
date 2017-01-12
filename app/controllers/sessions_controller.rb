@@ -9,10 +9,11 @@ class SessionsController < ApplicationController
 		if company && company.authenticate(params[:session][:password])
 			session[:company_id] = company.company_id
 			redirect_to company_giveaway_index_path
-	else
+		else
 			# flash[:alert] = "Please try again"
 			render "session/new"
 			# redirect_to root_path
+		end
 	end
 
 	def destroy
