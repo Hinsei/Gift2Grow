@@ -7,7 +7,7 @@ class Participant < ApplicationRecord
 
 #update later	
 	def points_earn
-		points = 0
+		# points = 0
 	end 
 	
 
