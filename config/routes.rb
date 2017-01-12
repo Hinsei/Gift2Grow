@@ -9,6 +9,6 @@ end
 
 root 'welcome#index'
 	delete "/sessions" => "sessions#destroy", :as => "logout"
-	get "/sessions/new" => "session#new", :as => "login"
+	get "/sessions/new" => "sessions#new", :as => "login"
 	get "/companies" => "companies#new", :as => "signup"
 end
