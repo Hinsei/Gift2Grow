@@ -1,0 +1,10 @@
+<h2>Company Profile</h2>
+
+<p>Name: <%= @company.name %></p>
+<p>Email: <%= @company.email %></p>
+<p>Website: <%= @company.website %></p>
+<p>Social Medial link: <%= @company.social_media_link %></p>
+<p>Address: <%= @company.address %></p>
+<p>Contact: <%= @company.contact %></p>
+
+<%= link_to "Edit", edit_company_path(@company) %>
