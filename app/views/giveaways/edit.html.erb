@@ -10,7 +10,7 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 			<%= render "form" %>
-			<%= button_to "Delete", company_giveaway_path(@company, @giveaway), confirm: "Are you sure?", method: :delete %>
+			<%= button_to "Delete", company_giveaway_path(@company, @giveaway), data: { confirm: "Are you sure?" }, method: :delete %>
 		</div>
 	</div>
 </div>
