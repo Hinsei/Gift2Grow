@@ -11,10 +11,10 @@
   <!-- nav bar -->
   <h1>Gift2Grow</h1>
   	<% if login? %>
-	  	Signed in as: <%= company.name %>
-	  	<%= link_to 'Home', company_giveaway_index_path(current_company) %>
-	  	<%= link_to 'Create a GiveAway', company_giveaway_create_path(current_company) %>
-	  	<%= link_to 'Profile', company_path %>
+	  	Signed in as: <%= @current_company.name %><br>
+	  	<%= link_to 'Home', company_giveaways_path(current_company) %>
+	  	<%= link_to 'Create a GiveAway', new_company_giveaway_path(current_company) %>
+	  	<%= link_to 'Profile', company_path(current_company) %>
 	  	<%= link_to 'Logout', logout_path, method: :delete %>
 	  <% else %>
 	  	<%= link_to 'Signup', signup_path %>
