@@ -1,14 +1,14 @@
 <%= form_for :session do |form| %>
-	<div>
+	<div class="form-group">
     <%= form.label :email %>
-    <%= form.text_field :email, type: 'email' %>
+    <%= form.text_field :email, type: 'email', class: "form-control" %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.password_field :password, class: "form-control" %>
   </div>
 
-  <%= form.submit "Login" %>
+  <%= form.submit "Login", class: "btn btn-primary" %>
 
 <% end %>
