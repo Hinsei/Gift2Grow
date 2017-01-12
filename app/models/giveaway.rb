@@ -2,6 +2,10 @@ class Giveaway < ApplicationRecord
 	require 'carrierwave/orm/activerecord'
 	before_create :generate_link
 
+	#Associations
+	belongs_to :company
+	has_many :participants
+
 	#Image Uploading
 	mount_uploader :prize_image, PrizeImageUploader
 	mount_uploader :terms_and_condition, TermsAndConditionUploader
