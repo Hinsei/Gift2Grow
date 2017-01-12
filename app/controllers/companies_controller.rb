@@ -12,7 +12,7 @@ class CompaniesController < ApplicationController
     def create
       @company =  Company.new(company_params)
        if @company.save
-         redirect_to company_giveaway_index_path(@company)
+         redirect_to company_giveaways_path(@company)
        else
          render :new
        end
