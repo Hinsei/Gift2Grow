@@ -1,5 +1,6 @@
 class Giveaway < ApplicationRecord
 	require 'carrierwave/orm/activerecord'
+	before_create :generate_link
 
 	#Image Uploading
 	mount_uploader :prize_image, PrizeImageUploader
@@ -17,5 +18,21 @@ class Giveaway < ApplicationRecord
 
 	#Associations
 	belongs_to :company
+
+private
+
+	def generate_link
+		self.link = "http://localhost:3000/#{random}"
+	end
+
+	def random_combo
+		my_number = []
+		selection = (1..9).to_a + ("a".."z").to_a
+		8.times do
+			my_number <<selection.sample(random: rand)
+		end
+		 my_number = my_number.join("")
+		return my_number
+	end
 
 end
