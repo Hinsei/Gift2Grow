@@ -7,6 +7,8 @@ resources :companies, only: [:new, :create, :edit, :show, :update, :destroy] do
 	resources :giveaway
 end
 
+resources :participants
+
 root 'welcome#index'
 	delete "/sessions" => "sessions#destroy", :as => "logout"
 	get "/sessions/new" => "session#new", :as => "login"
