@@ -1,0 +1,16 @@
+<h2> All Companies with G2G </h2>
+
+<table>
+<tr>
+	<th> Name </th>
+	<th> Role </th>
+	<th> Delete </th>
+</tr>
+	<% @companies.each do |company|%>
+<tr>
+	<td><%= company.name %></td>
+	<td><%= company.role %><%= link_to "Edit", edit_company_path(company.id) %></td>
+	<td><%= link_to "Delete", company_path(company.id), confirm: 'Are you sure?',method: :delete  %> </td>
+</tr>
+	<% end %>
+</table>
