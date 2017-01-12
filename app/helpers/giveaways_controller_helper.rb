@@ -1,0 +1,2 @@
+module GiveawaysControllerHelper
+end
