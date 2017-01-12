@@ -1,7 +1,7 @@
 class GiveawaysController < ApplicationController
 
 	before_action :find_company
-	before_action :find_giveaway, only: [:show, :edit, :update. :destroy]
+	before_action :find_giveaway, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@giveaways = @company.giveaways.all
