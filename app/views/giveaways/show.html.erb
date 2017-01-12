@@ -1,0 +1,61 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2" >
+			<h1 class="text-center">
+				<%= @giveaway.title %>
+			</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2" >
+			<h3 class="text-center">
+				<%= @giveaway.description %>
+			</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2" >
+			<h3 class="text-center">
+				<%= @giveaway.prize_name %>
+			</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2" >
+			<h3 class="text-center">
+				<%= image_tag(@giveaway.prize_image) %>
+			</h3>
+		</div>
+	</div>
+	<div class="row">
+			<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2" >
+				<h3 class="text-center">
+					<iframe src=<%= @giveaway.terms_and_condition %> width="600" height="780" style="border: none;"> </iframe>
+				</h3>
+			</div>
+		</div>
+	<div class="row">
+			<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2" >
+				<h3 class="text-center">
+					<%= @giveaway.winner_message %>
+				</h3>
+			</div>
+		</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2" >
+			<h3 class="text-center">
+				<%= @giveaway.consolation_message %>
+			</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 text-center">
+			<%= link_to @giveaway.link, new_participant_path(gvId: @giveaway.id), {style: "color:red;"} %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
+			<%= link_to "Edit", edit_company_giveaway_path(@company, @giveaway), class: "btn btn-primary" %>
+		</div>
+	</div>
+</div>
