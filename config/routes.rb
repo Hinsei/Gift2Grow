@@ -7,4 +7,7 @@ resources :companies, only: [:new, :edit, :show, :update, :destroy] do
 end
 
 root 'welcome#index'
+	delete "/sessions" => "sessions#destroy", :as => "logout"
+	get "/sessions" => "session#new", :as => "login"
+	get "/companies" => "companies#new", :as => "signup"
 end
