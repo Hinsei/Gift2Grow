@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 			redirect_to company_giveaways_path(company.id)
 		else
 			# flash[:alert] = "Please try again"
-			render "session/new"
+			render "new"
 			# redirect_to root_path
 		end
 	end
