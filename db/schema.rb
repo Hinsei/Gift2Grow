@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170112030501) do
+ActiveRecord::Schema.define(version: 20170112034243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,11 +57,11 @@ ActiveRecord::Schema.define(version: 20170112030501) do
     t.index ["giveaway_id"], name: "index_participants_on_giveaway_id", using: :btree
   end
 
-  create_table "referals", force: :cascade do |t|
+  create_table "referrals", force: :cascade do |t|
     t.integer  "participant_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.index ["participant_id"], name: "index_referals_on_participant_id", using: :btree
+    t.index ["participant_id"], name: "index_referrals_on_participant_id", using: :btree
   end
 
   create_table "winners", force: :cascade do |t|
