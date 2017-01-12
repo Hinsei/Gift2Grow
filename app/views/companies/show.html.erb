@@ -1,10 +1,34 @@
 <h2>Company Profile</h2>
+	
+	<table>
+	<tr>
+		<td>Name <td>: <%= @company.name %></td></td>
+	</tr>
+	<tr>
+		<td>Email <td>: <%= @company.email %></td></td>
+	</tr>
+	<tr>
+		<td>Website <td>: <%= @company.website %></td></td>
+	</tr>
+	<tr>
+		<td>Social Medial link <td>: <%= @company.social_media_link %></td></td>
+	</tr>
+	<tr>
+		<td>Address <td>: <%= @company.address %></td></td>
+	</tr>
+	<tr>
+		<td>Contact <td>: <%= @company.contact %></td></td>
+	</tr>
 
-<p>Name: <%= @company.name %></p>
-<p>Email: <%= @company.email %></p>
-<p>Website: <%= @company.website %></p>
-<p>Social Medial link: <%= @company.social_media_link %></p>
-<p>Address: <%= @company.address %></p>
-<p>Contact: <%= @company.contact %></p>
+<% if admin? %>
+	<tr>
+	<td>Role <td>: <%= @company.role %></td></td>
+	</tr>
+<% end %>
+</table>
 
-<%= link_to "Edit", edit_company_path(@company) %>
+	<%= link_to "Edit", edit_company_path(@company) %>
+	
+<% if admin? %>
+	<%= link_to "Other Companies", companies_path %>
+<% end %>

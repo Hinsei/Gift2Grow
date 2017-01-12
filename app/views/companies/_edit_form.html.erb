@@ -35,5 +35,12 @@
     <%= form.password_field :password %>
   </div>
 
+  <% if admin? %>
+	<dive>
+	<%= form.label :role %>
+	<%= form.select :role, options_for_select(["company","superadmin"]) %></td></td>
+	</tr>
+<% end %>
+
   <%= form.submit "Update Info" %>
 <% end %>
