@@ -2,8 +2,8 @@ class Company < ApplicationRecord
     has_many :giveaways, :dependent => :destroy
     has_secure_password
     enum role: {company: 0, superadmin: 1}
-    before_save {self.email = email.downcase}
-    before_create self.set_role
+    # before_save {self.email = email.downcase}
+    before_create :set_role
 
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
     validates :email, :presence => {:message =>"Email cannot be blank"}
