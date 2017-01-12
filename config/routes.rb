@@ -7,7 +7,10 @@ Rails.application.routes.draw do
 		resources :giveaways
 	end
 
-	root 'welcome#index'
+  resources :participants
+
+  root 'welcome#index'
+
 	delete "/sessions" => "sessions#destroy", :as => "logout"
 	get "/sessions/new" => "sessions#new", :as => "login"
 	post "/sessions/new" => "sessions#create"
