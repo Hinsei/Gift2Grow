@@ -1,39 +1,39 @@
 <%= form_for @company do |form| %>
-  <div>
+  <div class="form-group">
   	<%= form.label :name %>
-  	<%= form.text_field :name %>
+  	<%= form.text_field :name, class: "form-control" %>
   </div>
 
-	<div>
+	<div class="form-group">
     <%= form.label :email %>
-    <%= form.text_field :email, type: 'email' %>
+    <%= form.text_field :email, type: 'email', class: "form-control" %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.password_field :password, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :website %>
-    <%= form.text_field :website %>
+    <%= form.text_field :website, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :social_media_link %>
-    <%= form.text_field :social_media_link %>
+    <%= form.text_field :social_media_link, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :address %>
-    <%= form.text_field :address %>
+    <%= form.text_field :address, class: "form-control" %>
   </div>
 
-   <div>
+   <div class="form-group">
     <%= form.label :contact %>
-    <%= form.text_field :contact %>
+    <%= form.text_field :contact, class: "form-control" %>
   </div>
 
-  <%= form.submit "Signup" %>
+  <%= form.submit "Signup", class: "btn btn-primary" %>
 
 <% end %>
