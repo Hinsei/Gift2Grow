@@ -8,6 +8,19 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <!-- nav bar -->
+  <h1>Gift2Grow</h1>
+  	<% if login? %>
+	  	Signed in as: <%= company.name %>
+	  	<%= link_to 'Home', company_giveaway_index_path(current_company) %>
+	  	<%= link_to 'Create a GiveAway', company_giveaway_create_path(current_company) %>
+	  	<%= link_to 'Profile', company_path %>
+	  	<%= link_to 'Logout', logout_path, method: :delete %>
+	  <% else %>
+	  	<%= link_to 'Signup', signup_path %>
+	  	<%= link_to 'Login', login_path %>
+	  <% end %>
+
   <body>
     <%= yield %>
   </body>
