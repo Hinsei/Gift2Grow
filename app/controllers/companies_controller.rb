@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+    before_action :find_company, only: [:show, :edit, :update]
 
     def index
       @companies = Company.all
@@ -10,14 +11,16 @@ class CompaniesController < ApplicationController
     def create
       @company =  Company.new(company_params)
        if @company.save
-         redirect_to '/companies/show'
+         redirect_to @company
        else
          render :new
        end
     end
 
     def show
-      @company = Company.find(params[:id])
+    end
+
+    def edit
     end
 
     def update
@@ -33,7 +36,11 @@ class CompaniesController < ApplicationController
     private
 
     def company_params
-      params.require(:company).permit(:email, :name, :password_digest, :password, :password_confirmation)
+      params.require(:company).permit(:email, :name, :password, :password_confirmation, :website, :social_media_link, :address, :contact)
+    end
+
+    def find_company
+      @company = Company.find(params[:id])
     end
 
 end
