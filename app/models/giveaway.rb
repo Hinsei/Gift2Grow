@@ -26,7 +26,7 @@ class Giveaway < ApplicationRecord
 private
 
 	def generate_link
-		self.link = "http://localhost:3000/#{random}"
+		self.link = "http://gift2grow/#{random_combo}"
 	end
 
 	def random_combo

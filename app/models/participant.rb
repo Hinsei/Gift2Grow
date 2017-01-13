@@ -15,6 +15,4 @@ class Participant < ApplicationRecord
 		self.points = 0
 	end
 
-
-
 end
