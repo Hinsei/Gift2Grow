@@ -17,7 +17,7 @@ class GiveawaysController < ApplicationController
 		if @giveaway.save
 			Winner.create(giveaway_id: @giveaway.id)
 			flash[:notice] = "Giveaway creation successfull"
-			redirect_to company_giveaway_path(@company, @giveaway)
+			redirect_to company_giveaways_path(@company, @giveaway)
 		else
 			flash[:error] = "Giveaway creation failed!"
 			render 'new'
