@@ -7,17 +7,127 @@
 		</div>
 	</div>
 
-	<div id="company-profile">
+	<div id="giveaways-ongoing">
 		<div class="row">
-			<div class="col-md"
+			<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
+				<h2 class="text-center">
+					Ongoing Giveaways
+				</h2>
+			</div>
 		</div>
+			<% if giveaways? %>
+				<div class="row">
+					<div class="col-md-3 col-xs-3">
+						<h3 class="text-center">
+							Title
+						</h3>
+					</div>
+					<div class="col-md-3 col-xs-3">
+						<h3 class="text-center">
+							Link
+						</h3>
+					</div>
+					<div class="col-md-3 col-xs-3">
+						<h3 class="text-center">
+						 	Time Left
+						</h3>
+					</div>
+					<div class="col-md-3 col-xs-3">
+						<h3 class="text-center">
+							Participants
+						</h3>
+					</div>
+				</div>
+				<% ongoing.each do |giveaway| %>
+					<div class="row">
+						<div class="col-md-3 col-xs-3">
+							<h4 class="text-center">
+								<%= giveaway.title %>
+							</h4>
+						</div>
+						<div class="col-md-3 col-xs-3">
+							<h4 class="text-center">
+								<%= giveaway.link %>
+							</h4>
+						</div>
+						<div class="col-md-3 col-xs-3">
+							<h4 class="text-center">
+								Timer
+							</h4>
+						</div>
+						<div class="col-md-3 col-xs-3">
+							<h4 class="text-center">
+								<%= giveaway.participants.count %>
+							</h4>
+						</div>
+					</div>
+				<% end %>
+			<% else %>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
+						<h1 class="text-center">
+							No Current Ongoing Giveaway!
+						</h1>
+					</div>
+				</div>
+			<% end %>
 	</div>
 
-	<div id="statistic-windows">
+	<div id="giveaways-finished">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
+				<h2 class="text-center">
+					Finished Giveaways
+				</h2>
+			</div>
+		</div>
+			<% if winner? %>
+				<div class="row">
+					<div class="col-md-3 col-xs-3">
+						<h3 class="text-center">
+							Title
+						</h3>
+					</div>
+					<div class="col-md-3 col-xs-3">
+						<h3 class="text-center">
+							Stats
+						</h3>
+					</div>
+					<div class="col-md-3 col-xs-3">
+						<h3 class="text-center">
+						 	Time CLeft
+						</h3>
+					</div>
+					<div class="col-md-3 col-xs-3">
+						<h3 class="text-center">
+							Participants
+						</h3>
+					</div>
+				</div>
+				<% finished.each do |giveaway| %>
+					<div class="row">
+						<div class="col-md-3 col-xs-3">
+							<%= giveaway.title %>
+						</div>
+						<div class="col-md-3 col-xs-3">
+							<%= giveaway.link %>
+						</div>
+						<div class="col-md-3 col-xs-3">
+							<h1> Timer </h1>
+						</div>
+						<div class="col-md-3 col-xs-3">
+							<%= giveaway.participants.count %>
+						</div>
+					</div>
+				<% end %>
+			<% else %>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
+						<h1 class="text-center">
+							No Winners for any giveaway yet!
+						</h1>
+					</div>
+				</div>
+			<% end %>
 	</div>
-
-
-	<div id="giveaways-window">
-	</div>
-
 </div>

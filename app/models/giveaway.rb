@@ -1,8 +1,12 @@
 class Giveaway < ApplicationRecord
 	require 'carrierwave/orm/activerecord'
 	before_create :generate_link
+	before_create :set_status
+	enum status: {ongoin: 0, finished: 1}
+
 
 	#Associations
+	has_one :winner
 	belongs_to :company
 	has_many :participants
 
@@ -37,6 +41,10 @@ private
 		end
 		 my_number = my_number.join("")
 		return my_number
+	end
+
+	def set_status
+		self.role =0
 	end
 
 end
