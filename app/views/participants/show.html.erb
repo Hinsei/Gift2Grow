@@ -7,6 +7,6 @@
 
 <label> Increase your chance by sharing this link!</label>
 
-<%= @giveaway.participant_id.link %>
+<%= link_to @giveaway.link + @particpant.referral_identification, new_participant_path(@company, @giveaway)  %>
 
 <%= button_to "Done", form_done_path %>
