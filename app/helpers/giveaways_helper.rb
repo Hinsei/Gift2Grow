@@ -1,11 +1,10 @@
-module GiveawaysControllerHelper
+module GiveawaysHelper
 
 	def giveaways?
 		if @company.giveaways.count == 0
-			true
-		else
 			false
+		else
+			true
 		end
 	end
-
 end
