@@ -1,21 +1,25 @@
 class ParticipantsController < ApplicationController
-
 	def new
 		@participant = Participant.new
 	end
 
 	def create
-		@giveaway_id = Giveaway.find(params[:giveaway_id])
-		@participant = Participant.new(participant_params)
-	   if @participant.save
 
-	     redirect_to participant_path
+		@participant = Participant.new(participant_params)
+		@participant.giveaway_id = params[:participant][:gvId]
+	   if @participant.save
+	     redirect_to @participant
 	     #check route
+		 else
+			 flash[:error] = "Failed"
+			 render :new
 	   end
+
 	end
 
 	def show
-		@participant = @giveaway.participant.find(params[:id])
+		@participant = Participant.find(params[:id])
+
 	end
 
 	def destroy
@@ -24,6 +28,10 @@ class ParticipantsController < ApplicationController
 
 	def participant_params
 		params.require(:participant).permit(:name, :email, :contact)
+	end
+
+	def find_giveaway
+		@giveaway = Giveaway.find(params[:gvId])
 	end
 
 end
