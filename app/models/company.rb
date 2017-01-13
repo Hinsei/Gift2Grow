@@ -2,7 +2,6 @@ class Company < ApplicationRecord
     has_many :giveaways, :dependent => :destroy
     has_secure_password
     enum role: {company: 0, superadmin: 1}
-    # before_save {self.email = email.downcase}
     before_create :set_role
 
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
@@ -11,6 +10,7 @@ class Company < ApplicationRecord
     validates :email, format: {with: VALID_EMAIL_REGEX, message: "Please input a valid email"}
     validates :name, :presence => {:message =>"name cannot be blank"}
     validates :name, :uniqueness => {:message =>"name already exist"}
+    validates :password, length: {minimum: 5}, presence: true, unless: "password.nil?"
 
     def self.authenticate(email, password)
        company = Company.find_by(email: email)
@@ -24,5 +24,4 @@ class Company < ApplicationRecord
     def set_role
       self.role = 0
     end
-
 end

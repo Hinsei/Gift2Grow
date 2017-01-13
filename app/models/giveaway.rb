@@ -1,8 +1,12 @@
 class Giveaway < ApplicationRecord
 	require 'carrierwave/orm/activerecord'
 	before_create :generate_link
+	before_create :set_status
+	enum status: {ongoin: 0, finished: 1}
+
 
 	#Associations
+	has_one :winner
 	belongs_to :company
 	has_many :participants
 
@@ -19,6 +23,8 @@ class Giveaway < ApplicationRecord
 	validates	:consolation_message, presence: true
 	validates	:num_winner, presence: true
 	validates :num_backup, presence: true
+	validates :start_date, presence: true
+	validates :end_date, presence: true
 
 	#Associations
 	belongs_to :company
@@ -26,7 +32,7 @@ class Giveaway < ApplicationRecord
 private
 
 	def generate_link
-		self.link = "http://localhost:3000/#{random}"
+		self.link = "http://gift2grow/#{random_combo}"
 	end
 
 	def random_combo
@@ -37,6 +43,10 @@ private
 		end
 		 my_number = my_number.join("")
 		return my_number
+	end
+
+	def set_status
+		self.role =0
 	end
 
 end

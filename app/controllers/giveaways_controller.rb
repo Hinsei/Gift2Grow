@@ -8,14 +8,16 @@ class GiveawaysController < ApplicationController
 	end
 
 	def new
+		@title = "Create"
 		@giveaway = @company.giveaways.new
 	end
 
 	def create
 		@giveaway = @company.giveaways.new(giveaway_params)
 		if @giveaway.save
+			Winner.create(giveaway_id: @giveaway.id)
 			flash[:notice] = "Giveaway creation successfull"
-			redirect to company_giveaway_path(@company, @giveaway)
+			redirect_to company_giveaway_path(@company, @giveaway)
 		else
 			flash[:error] = "Giveaway creation failed!"
 			render 'new'
@@ -26,6 +28,7 @@ class GiveawaysController < ApplicationController
 	end
 
 	def edit
+		@title = "Edit"
 	end
 
 	def update
