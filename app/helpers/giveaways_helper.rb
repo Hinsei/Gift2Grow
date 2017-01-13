@@ -21,4 +21,12 @@ module GiveawaysHelper
 			true
 		end
 	end
+
+	def ongoing
+		@giveaways.where(status: 0)
+	end
+
+	def finished
+		@giveaways.where(status: 1)
+	end
 end

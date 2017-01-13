@@ -38,19 +38,27 @@
 						</h3>
 					</div>
 				</div>
-				<% @giveaways.where(status: 0).each do |giveaway| %>
+				<% ongoing.each do |giveaway| %>
 					<div class="row">
 						<div class="col-md-3 col-xs-3">
-							<%= giveaway.title %>
+							<h4 class="text-center">
+								<%= giveaway.title %>
+							</h4>
 						</div>
 						<div class="col-md-3 col-xs-3">
-							<%= giveaway.link %>
+							<h4 class="text-center">
+								<%= giveaway.link %>
+							</h4>
 						</div>
 						<div class="col-md-3 col-xs-3">
-							<h1> Timer </h1>
+							<h4 class="text-center">
+								Timer
+							</h4>
 						</div>
 						<div class="col-md-3 col-xs-3">
-							<%= giveaway.participants.count %>
+							<h4 class="text-center">
+								<%= giveaway.participants.count %>
+							</h4>
 						</div>
 					</div>
 				<% end %>
@@ -96,7 +104,7 @@
 						</h3>
 					</div>
 				</div>
-				<% @giveaways.where(status: 1).each do |giveaway| %>
+				<% finished.each do |giveaway| %>
 					<div class="row">
 						<div class="col-md-3 col-xs-3">
 							<%= giveaway.title %>
