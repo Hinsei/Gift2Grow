@@ -105,10 +105,12 @@
 			<%= link_to "Edit", edit_company_path(@company), class: "btn btn-default btn-block" %>
 		</div>
 	</div>
+	<% if admin? %>
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3 text-center">
 			<%= link_to "Other Companies", companies_path, class: "btn btn-default btn-block" %>
 		</div>
 	</div>
+	<% end %>
 </div>
 <br>
