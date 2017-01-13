@@ -4,8 +4,10 @@ Rails.application.routes.draw do
 resources :sessions, only: [:create]
 
 resources :companies, only: [:new, :create, :edit, :show, :update, :destroy] do
-	resources :giveaway
+	resources :giveaways
 end
+
+resources :participants
 
 root 'welcome#index'
 	delete "/sessions" => "sessions#destroy", :as => "logout"

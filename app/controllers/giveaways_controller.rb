@@ -1,7 +1,7 @@
 class GiveawaysController < ApplicationController
 
 	before_action :find_company
-	before_action :find_giveaway, only: [:show, :edit, :update. :destroy]
+	before_action :find_giveaway, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@giveaways = @company.giveaways.all
@@ -51,7 +51,7 @@ private
 	end
 
 	def find_giveaway
-		@giveaway = @company.giveaways.find_by_(id: params[:id])
+		@giveaway = @company.giveaways.find_by(id: params[:id])
 	end
 
 	def find_company
