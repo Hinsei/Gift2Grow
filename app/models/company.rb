@@ -11,7 +11,7 @@ class Company < ApplicationRecord
     validates :email, format: {with: VALID_EMAIL_REGEX, message: "Please input a valid email"}
     validates :name, :presence => {:message =>"name cannot be blank"}
     validates :name, :uniqueness => {:message =>"name already exist"}
-    validates :password, length: {minimum: 5}, presence: true
+    validates :password, length: {minimum: 5}, presence: true, unless: "password.nil?"
 
     def self.authenticate(email, password)
        company = Company.find_by(email: email)
@@ -25,5 +25,4 @@ class Company < ApplicationRecord
     def set_role
       self.role = 0
     end
-
 end

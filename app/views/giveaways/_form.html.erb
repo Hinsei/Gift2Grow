@@ -1,0 +1,46 @@
+<%= form_for [@company, @giveaway] do |f| %>
+				<div class="form-group">
+					<%= f.label :title, "Title" %>
+					<%= f.text_field :title, class: "form-control" %>
+				</div>
+				<br>
+				<div class="form-group">
+					<%= f.label :description, "Description" %>
+					<%= f.text_area :description, class: "form-control", placeholder: "Give a description of your giveaway!", rows: "5" %>
+				</div>
+				<br>
+				<div class="form-group">
+					<%= f.label :prize_name, "The Prize" %>
+					<%= f.text_field :prize_name, class: "form-control", placeholder: "What is this awsome prize!" %>
+				</div>
+				<br>
+				<div class="form-group">
+					<%= f.label :prize_image, "Prize Image" %>
+					<%= f.file_field :prize_image, class: "form-control" %>
+				</div>
+				<br>
+				<div class="form-group">
+					<%= f.label :terms_and_condition, "T&C" %>
+					<%= f.file_field :terms_and_condition, class: "form-control" %>
+				</div>
+				<br>
+				<div class="form-group">
+					<%= f.label :winner_message, "Winner Message" %>
+					<%= f.text_area :winner_message, class: "form-control", rows: "5", placeholder: "Message you would like the winner to receive here!" %>
+				</div>
+				<br>
+				<div class="form-group">
+					<%= f.label :consolation_message, "Consolation Message" %>
+					<%= f.text_area :consolation_message, class: "form-control", rows: "4", placeholder: "Offer the others a discount or promotion here!" %>
+				</div>
+				<br>
+				<div class="form-group">
+					<%= f.label :num_winner, "Number of Winners" %>
+					<%= f.select :num_winner, options_for_select([1,2]), {}, {class: "btn btn-default"} %>
+				</div>
+				<div class="form-group">
+					<%= f.label :num_backup, "Number of Backup" %>
+					<%= f.select :num_backup, options_for_select([1,2,3]), {}, {class: "btn btn-default"} %>
+				</div>
+				<%= f.submit "#{@title} Giveaway" %>
+			<% end %>

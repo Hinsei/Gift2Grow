@@ -9,4 +9,8 @@ module SessionsHelper
 		!current_company.nil?
 	end
 
+	def admin?
+		current_company.superadmin?
+	end
+
 end

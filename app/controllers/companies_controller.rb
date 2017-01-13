@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-    before_action :find_company, only: [:show, :edit, :update]
+    before_action :find_company, only: [:show, :edit, :update, :destroy]
 
     def index
       @companies = Company.all
@@ -25,6 +25,7 @@ class CompaniesController < ApplicationController
     end
 
     def update
+      byebug
       if @company.update(company_params)
         flash[:success] = "Info updated"
         redirect_to @company
@@ -34,10 +35,16 @@ class CompaniesController < ApplicationController
       end
     end
 
+    def destroy
+      if @company.destroy
+        redirect_to companies_path
+      end
+    end
+
     private
 
     def company_params
-      params.require(:company).permit(:email, :name, :password, :password_confirmation, :website, :social_media_link, :address, :contact)
+      params.require(:company).permit(:email, :name, :password, :password_confirmation, :website, :social_media_link, :address, :contact, :role)
     end
 
     def find_company

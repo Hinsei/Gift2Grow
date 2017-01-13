@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
 	resources :sessions, only: [:create]
 
-	resources :companies, only: [:new, :create, :edit, :show, :update, :destroy] do
+	resources :companies do
 		resources :giveaways
 	end
 
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 	delete "/sessions" => "sessions#destroy", :as => "logout"
 	get "/sessions/new" => "sessions#new", :as => "login"
 	post "/sessions/new" => "sessions#create"
-	get "/companies" => "companies#new", :as => "signup"
+	get "/companies/new" => "companies#new", :as => "signup"
 
 end
 
