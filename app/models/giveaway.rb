@@ -3,6 +3,7 @@ class Giveaway < ApplicationRecord
 	before_create :generate_link
 
 	#Associations
+	has_one :winner
 	belongs_to :company
 	has_many :participants
 
