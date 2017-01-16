@@ -1,6 +1,6 @@
 class Participant < ApplicationRecord
 	before_create :points_earn
-	before_create :set_refreferral_identification
+	before_create :set_referral_identification
 
 	# Associations
 	belongs_to :giveaway
@@ -17,7 +17,7 @@ class Participant < ApplicationRecord
 	end
 
 	def set_referral_identification
-		Self.referral_identification = SecureRandom.base64(6)
+		self.referral_identification = SecureRandom.base64(5)
 	end
 
 end

@@ -1,12 +1,12 @@
 <label> Congratz, You already joined this giveaway </label>
 
-<h4>Your Email : <%= @participant.name %></h4>
-<h4>Your Name : <%= @particpant.name %></h4>
+<h4>Your Email : <%= @participant.email %></h4>
+<h4>Your Name : <%= @participant.name %></h4>
 <h4>Your Contact Number : <%= @participant.contact %></h4>
 
 
 <label> Increase your chance by sharing this link!</label>
 
-<%= link_to @giveaway.link + @particpant.referral_identification, new_participant_path(@company, @giveaway)  %>
-
-<%= button_to "Done", form_done_path %>
+<%= link_to@participant.giveaway.link + "/" + @participant.referral_identification, new_participant_path(@company, @giveaway)  %>
+<br>
+<%= link_to "Done", root_path %>
