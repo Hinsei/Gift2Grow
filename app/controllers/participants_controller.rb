@@ -6,7 +6,7 @@ class ParticipantsController < ApplicationController
 	def create
 		@participant = Participant.new(participant_params)
 		@participant.giveaway_id = params[:participant][:gvId]
-		@referral = Participant.where(referral_identification: params[:participant][:revId])[0]
+		@referral = Participant.where(referral_identification: params[:participant][:refId])[0]
 	   if @referral.present? && @participant.save
 			Referral.create(participant_id: @referral.id)
 			@referral.points += 1
