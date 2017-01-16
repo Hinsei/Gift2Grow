@@ -32,7 +32,7 @@ class Giveaway < ApplicationRecord
 private
 
 	def generate_link
-		self.link = "http://gift2grow/#{random_combo}"
+		self.link = "#{random_combo}"
 	end
 
 	def random_combo
@@ -46,7 +46,7 @@ private
 	end
 
 	def set_status
-		self.role = 0
+		self.status = 0
 	end
 
 end

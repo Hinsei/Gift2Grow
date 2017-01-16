@@ -25,6 +25,8 @@ class GiveawaysController < ApplicationController
 	end
 
 	def show
+		@participant = Participant.where(referral_identification: params[:referral_identification])[0]
+		@giveaway = Giveaway.find(params[:giveaway_link])
 	end
 
 	def edit
@@ -50,7 +52,7 @@ class GiveawaysController < ApplicationController
 private
 
 	def giveaway_params
-		params.require(:giveaway).permit(:title, :description, :prize_name, :prize_image, :terms_and_condition, :winner_message, :consolation_message, :num_winner, :num_backup)
+		params.require(:giveaway).permit(:title, :description, :prize_name, :prize_image, :terms_and_condition, :winner_message, :consolation_message, :num_winner, :num_backup, :start_date, :end_date)
 	end
 
 	def find_giveaway
@@ -58,7 +60,8 @@ private
 	end
 
 	def find_company
-		@company = Company.find(params[:company_id])
+		@giveaway = Giveaway.find(params[:giveaway_link])
+		@company = @giveaway.company
 	end
 
 
