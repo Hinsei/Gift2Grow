@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+	</head>
+	<body>
+		<h1>
+			Congratulations <%= @participant.name %>
+		</h1>
+		<p>
+			You have been chosen as a winner for the giveaway <%= @giveaway.title %> that you have joined previously
+		</p>
+		<br>
+		<%if @giveaway.winner_message.present? %>
+			<p><%=  @giveaway.winner_message %></p><br>
+		<% end %>
+		<p>
+			Expect an email soon from <%= @giveaway.company.name %> for further instructions for prize collection.
+		</p>
+		<br>
+		<p>
+			Congratulations,<br>
+			The Gift2Grow Team
+		</p>
+		<p><span style="font-size: 7px;">
+			Disclaimer: Gift2Grow is not responsible for the exchange process between the selected winner and responsible company.
+		</span></p>
+	</body>
+</html>

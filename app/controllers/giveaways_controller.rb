@@ -63,5 +63,4 @@ private
 		@company = @giveaway.company
 	end
 
-
 end

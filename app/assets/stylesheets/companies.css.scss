@@ -36,10 +36,10 @@
 }
 
 .mainbutton1 {
+	color: white;
 	font-weight: bold;
 	font-size: 18px;
 	background-color: #29E4B9;
-	color: white;
 	border: none;
 }
 
@@ -50,4 +50,26 @@
 	color: grey;
 	border: none;
 }
+
+.form-control {
+	color: black;
+}
+
+tr {
+	border-bottom: 1px solid lightgrey;
+}
+
+td {
+	padding: 10px;
+	text-align: left;
+}
+
+th {
+	padding: 10px;
+	text-align: left;
+	color: grey;
+	font-size: 16px;
+	width: 30%;
+}
+
 
