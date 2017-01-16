@@ -1,3 +1,4 @@
+
 <%= form_for @participant, :html => {:multipart => true} do |form| %>
 
   <div>
@@ -15,8 +16,8 @@
     <%= form.text_field :contact %>
   </div>
 
+  <%= form.hidden_field :gvId, value: params[:gvId] %>
+  
   <%= form.submit "Join This GiveAway" %>
 
 <% end %>
-
-

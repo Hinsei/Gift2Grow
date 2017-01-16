@@ -23,6 +23,8 @@ class Giveaway < ApplicationRecord
 	validates	:consolation_message, presence: true
 	validates	:num_winner, presence: true
 	validates :num_backup, presence: true
+	validates :start_date, presence: true
+	validates :end_date, presence: true
 
 	#Associations
 	belongs_to :company

@@ -12,6 +12,7 @@ class CompaniesController < ApplicationController
     def create
       @company =  Company.new(company_params)
        if @company.save
+         session[:company_id] = @company.id
          redirect_to company_giveaways_path(@company)
        else
          render :new
