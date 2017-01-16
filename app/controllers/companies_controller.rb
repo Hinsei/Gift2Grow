@@ -12,6 +12,7 @@ class CompaniesController < ApplicationController
     def create
       @company =  Company.new(company_params)
        if @company.save
+         session[:company_id] = @company.id
          redirect_to company_giveaways_path(@company)
        else
          render :new
@@ -25,8 +26,7 @@ class CompaniesController < ApplicationController
     end
 
     def update
-      byebug
-      if @company.update(company_params)
+        if @company.update(company_params)
         flash[:success] = "Info updated"
         redirect_to @company
       else
