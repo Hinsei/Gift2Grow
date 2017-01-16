@@ -55,12 +55,19 @@ private
 	end
 
 	def find_giveaway
-		@giveaway = @company.giveaways.find_by(id: params[:id])
+		if params[:company_id].present?
+			@giveaway = @company.giveaways.find_by(id: params[:id])
+		else
+			@giveaway = Giveaway.find_by(link: params[:giveaway_link])
+		end
 	end
 
 	def find_company
-		@giveaway = Giveaway.find(params[:id])
-		@company = @giveaway.company
+		if params[:company_id].present?
+			@company = Company.find(params[:company_id])
+		else
+			@company = Company.find(Giveaway.find_by(link: params[:giveaway_link]).company_id)
+		end
 	end
 
 end

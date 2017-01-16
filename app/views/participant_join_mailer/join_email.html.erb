@@ -6,15 +6,21 @@
 	<body>
 		<h1>Thank you for joining <%= @giveaway.title %>.</h1>
 		<p>
-			Hi @participant.name,<br>
-			Your have successfully joined the giveaway!<br>
+			Hi <%= @participant.name %>,<br><br>
+			Your have successfully joined the giveaway!<br><br>
 			We will send you an email with further details should you be chosen as the winner.<br>
-			Good Luck<br>
-			<br>
+			Good Luck!<br><br>
+			Meanwhile please visit
+			<% if @giveaway.company.website.present? %>
+				<%= @giveaway.company.website %> if you would like to learn more about them.
+			<% else %>
+				<%= @giveaway.company.social_media_link[0] %> f you would like to learn more the affiliated company.
+			<% end %>
+			<br><br>
 			Sincerely,<br>
 			The Gift2Grow Team.<br>
 		</p>
-		<p><span style="font-size: 7px;">
+		<p><span style="font-size: 10px;">
 			Disclaimer: Gift2Grow is not responsible for the exchange process between the selected winner and responsible company.
 		</span></p>
 	</body>

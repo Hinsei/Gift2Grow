@@ -11,8 +11,11 @@ class ParticipantsController < ApplicationController
 			Referral.create(participant_id: @referral.id)
 			@referral.points += 1
 			@referral.save!
+			ParticipantJoinMailer.join_email(@participant)
 			redirect_to @participant
 		 elsif @participant.save
+		 	byebug
+		 	ParticipantJoinMailer.join_email(@participant)
 	    redirect_to @participant
 		 else
 			 flash[:error] = "Failed"

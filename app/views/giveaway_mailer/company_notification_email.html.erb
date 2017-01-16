@@ -8,25 +8,32 @@
  		A winner for <%= @giveaway.title %> has been chosen!
  	</h1>
  	<p>
- 		Hi <%= @company.name %>,<br>
- 		We have determined the winners for a giveaway that you initiated through our services.<br>
+ 		Hi <%= @company.name %>,<br><br>
+ 		We have determined the
+ 		<% if @giveaway.num_winner > 1 %>
+ 			winners
+ 		<% else %>
+ 			winner
+ 		<% end %>
+ 		for a giveaway that you initiated through our services.<br>
  		The winners and backup winner are as follows:-
  	</p>
- 	<ul>
+ 	<ol><span style="text-decoration: underline;">Main Winners</span>
  		<% @winners.each do |winner| %>
- 			<li> Main Winner: <%= winner.name %>, Email: <%= winner.email %> </li>
+ 			<li> Main Winner: <%= Participant.find(winner).name %>, Email: <%= Participant.find(winner).email %> </li>
  		<% end %>
+ 	</ol>
+ 	<ol><span style="text-decoration: underline;">Backup Winners</span>
  		<% @backups.each do |backup| %>
- 			<li> Backup Winner: <%= backup.name %>, Email: <%= backup.email %> </li>
+ 			<li> Backup Winner: <%= Participant.find(backup).name %>, Email: <%= Participant.find(backup).email %> </li>
  		<% end %>
- 	</ul><br>
+ 	</ol>
  	<p>
  		Send an email to the main winners with collection instructions if you have not already specified it when creating a giveaway with us.<br>
  		Should they choose to be unresponsive, feel free to contact the backup winners directly or through your dashboard at our website!
  	</p>
- 	<br>
  	<p>
- 		Thank You for Choosing Us.<br>
+ 		Thank You for Choosing Us.<br><br>
  		Sincerely,<br>
  		The Gift2Grow Team.
  	</p>
