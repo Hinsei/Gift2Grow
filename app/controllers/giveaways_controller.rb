@@ -50,7 +50,7 @@ class GiveawaysController < ApplicationController
 private
 
 	def giveaway_params
-		params.require(:giveaway).permit(:title, :description, :prize_name, :prize_image, :terms_and_condition, :winner_message, :consolation_message, :num_winner, :num_backup)
+		params.require(:giveaway).permit(:title, :description, :prize_name, :prize_image, :terms_and_condition, :winner_message, :consolation_message, :num_winner, :num_backup, :start_date, :end_date)
 	end
 
 	def find_giveaway

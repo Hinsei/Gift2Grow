@@ -46,7 +46,7 @@ private
 	end
 
 	def set_status
-		self.role = 0
+		self.status = 0
 	end
 
 end
