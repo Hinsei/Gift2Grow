@@ -42,12 +42,12 @@
 					<div class="row">
 						<div class="col-md-3 col-xs-3">
 							<h4 class="text-center">
-								<%= link_to giveaway.title, company_giveaway_path(@company, giveaway)  %>
+								<%= link_to giveaway.title, edit_company_giveaway_path(@company, giveaway)  %>
 							</h4>
 						</div>
 						<div class="col-md-3 col-xs-3">
 							<h4 class="text-center">
-								<%= link_to giveaway.link, new_participant_path(gvId: giveaway.id) %>
+								<%= link_to giveaway.link, company_giveaway_path(@company, giveaway) %>
 							</h4>
 						</div>
 						<div class="col-md-3 col-xs-3">
