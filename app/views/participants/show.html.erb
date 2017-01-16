@@ -7,6 +7,7 @@
 
 <label> Increase your chance by sharing this link!</label>
 
-<%= link_to@participant.giveaway.link + "/" + @participant.referral_identification, new_participant_path(@company, @giveaway)  %>
+<%= link_to "http://gift2grow/" + @participant.giveaway.link + "/" + @participant.referral_identification,  company_giveaway_path(@company, @giveaway, refId: @participant.referral_identification)  %>
+
 <br>
 <%= link_to "Done", root_path %>

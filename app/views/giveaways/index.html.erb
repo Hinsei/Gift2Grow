@@ -47,9 +47,10 @@
 								<%= link_to giveaway.title, edit_company_giveaway_path(@company, giveaway)  %>
 							</h4>
 						</div>
-						<div class="col-md-4 col-xs-4 dashanswer">
-							<h4 class="text-center dashanswer">
-								<%= link_to giveaway.link, company_giveaway_path(@company, giveaway) %>
+						<div class="col-md-3 col-xs-3">
+							<h4 class="text-center">
+								<%= link_to "http://gift2grow/" + giveaway.link, company_giveaway_path(@company, giveaway) %>
+
 							</h4>
 						</div>
 						<div class="col-md-2 col-xs-2 dashanswer">

@@ -25,6 +25,7 @@ class GiveawaysController < ApplicationController
 	end
 
 	def show
+		@participant = Participant.where(referral_identification: params[:refId])[0]
 	end
 
 	def edit
@@ -58,7 +59,8 @@ private
 	end
 
 	def find_company
-		@company = Company.find(params[:company_id])
+		@giveaway = Giveaway.find(params[:id])
+		@company = @giveaway.company
 	end
 
 end
