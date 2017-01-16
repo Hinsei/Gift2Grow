@@ -4,11 +4,11 @@
 		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
 	</head>
 	<body>
-		<h1>Sorry <%= participant.name %> you didn't win!</h1>
+		<h1>Sorry <%= @participant.name %> you didn't win!</h1>
 		<p>
 			Unfortunately you were not chosen as the winner for this giveaway!
 		</p>
-		<% if @giveaway.consolation_message.present %>
+		<% if @giveaway.consolation_message.present? %>
 			<p>
 				<%= @giveaway.consolation_message %><br>
 			</p>

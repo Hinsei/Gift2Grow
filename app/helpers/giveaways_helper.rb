@@ -11,7 +11,7 @@ module GiveawaysHelper
 	def winner?
 		counter = 0
 		@company.giveaways.each do |giveaway|
-			unless giveaway.winner.winners.nil?
+			unless giveaway.winner.main_winners.empty?
 				counter += 1
 			end
 		end

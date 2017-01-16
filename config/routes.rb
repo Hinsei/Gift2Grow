@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 	post "/sessions/new" => "sessions#create"
 	get "/companies/new" => "companies#new", :as => "signup"
 	get "/:giveaway_link/:referral_identification" => "giveaways#show"
-	# get "/:giveaway_link" => "giveaways#show"
+	get "/:giveaway_link" => "giveaways#show"
 
 
 

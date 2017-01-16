@@ -8,21 +8,28 @@
 			Congratulations <%= @participant.name %>
 		</h1>
 		<p>
-			You have been chosen as a winner for the giveaway <%= @giveaway.title %> that you have joined previously
+			You have been chosen as a winner for the giveaway <%= @giveaway.title %> that you have joined previously.
 		</p>
-		<br>
 		<%if @giveaway.winner_message.present? %>
-			<p><%=  @giveaway.winner_message %></p><br>
+			<p><%=  @giveaway.winner_message %></p>
 		<% end %>
 		<p>
 			Expect an email soon from <%= @giveaway.company.name %> for further instructions for prize collection.
 		</p>
+		<p>
+			Meanwhile please visit
+			<% if @giveaway.company.website.present? %>
+				<%= @giveaway.company.website %> if you would like to learn more about them.
+			<% else %>
+				<%= @giveaway.company.social_media_link[0] %> f you would like to learn more the affiliated company.
+			<% end %>
+		</p>
 		<br>
 		<p>
 			Congratulations,<br>
-			The Gift2Grow Team
+			The Gift2Grow Team.
 		</p>
-		<p><span style="font-size: 7px;">
+		<p><span style="font-size: 10px;">
 			Disclaimer: Gift2Grow is not responsible for the exchange process between the selected winner and responsible company.
 		</span></p>
 	</body>
