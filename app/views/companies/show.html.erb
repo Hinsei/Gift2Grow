@@ -8,54 +8,54 @@
 	</div>
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
-			<h2 class="text-center">
+			<h2 class="text-center title">
 				Name
 			</h2>
 		</div>
 		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
-			<h3 class="text-center">
+			<h3 class="text-center info">
 				<%= @company.name %>
 			</h3>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
-			<h2 class="text-center">
+			<h2 class="text-center title">
 				Email
 			</h2>
 		</div>
 		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
-			<h3 class="text-center">
+			<h3 class="text-center info">
 				<%= @company.email %>
 			</h3>
-		</div>>
+		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
-			<h2 class="text-center">
+			<h2 class="text-center title">
 				Website
 			</h2>
 		</div>
-		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
-			<h3 class="text-center">
+		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 ">
+			<h3 class="text-center info">
 				<%= @company.website %>
 			</h3>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
-			<h2 class="text-center">
+			<h2 class="text-center title">
 				Social Media Sites
 			</h2>
 		</div>
 		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 			<% if @company.social_media_link.empty? %>
-				<h3 class="text-center">
+				<h3 class="text-center info">
 					None
 				</h3>
 			<% else %>
 				<%= @company.social_media_link.each do |link| %>
-					<h3 class="text-center">
+					<h3 class="text-center info">
 						<%= link %>
 				<% end %>
 			<% end %>
@@ -64,24 +64,24 @@
 	</div>
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
-			<h2 class="text-center">
+			<h2 class="text-center title">
 				Address
 			</h2>
 		</div>
 		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
-			<h2 class="text-center">
+			<h2 class="text-center info">
 				<%= @company.address %>
 			</h2>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
-			<h2  class="text-center">
+			<h2  class="text-center title">
 				Contact
 			</h2>
 		</div>
 		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
-			<h3 class="text-center">
+			<h3 class="text-center info">
 				<%= @company.contact %>
 			</h3>
 		</div>
@@ -89,26 +89,27 @@
 	<% if admin? %>
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
-				<h2 class ="text-center">
+				<h2 class ="text-center title">
 					 Role
 				</h2>
 			</div>
 			<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
-				<h3 class="text-center">
+				<h3 class="text-center info">
 					<%= @company.role %>
 				</h3>
 			</div>
 		</div>
 	<% end %>
+	<br>
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3 text-center">
-			<%= link_to "Edit", edit_company_path(@company), class: "btn btn-default btn-block" %>
+			<%= link_to "Edit", edit_company_path(@company), class: "btn btn-default btn-block mainbutton" %>
 		</div>
 	</div>
 	<% if admin? %>
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3 text-center">
-			<%= link_to "Other Companies", companies_path, class: "btn btn-default btn-block" %>
+			<%= link_to "Other Companies", companies_path, class: "btn btn-default btn-block mainbutton2" %>
 		</div>
 	</div>
 	<% end %>

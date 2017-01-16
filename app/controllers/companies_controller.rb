@@ -26,8 +26,7 @@ class CompaniesController < ApplicationController
     end
 
     def update
-      byebug
-      if @company.update(company_params)
+        if @company.update(company_params)
         flash[:success] = "Info updated"
         redirect_to @company
       else

@@ -3,13 +3,42 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #giveaways-ongoing {
-	height: 200px;
-	width: 100%;
-	border: black 1px solid;
+	height: 450px;
+	width: 49%;
+	border: grey 1px solid;
+	float: left;
+	border-radius: 8px;
+	
 };
 
 #giveaways-finished {
-	height: 200px;
-	width: 100%;
-	border: black 1px solid;
+	height: 450px;
+	width: 49%;
+	border: grey 1px solid;
+	float: right;
+	border-radius: 8px;
+
 };
+
+.empty {
+	color: lightgrey;
+}
+
+.header {
+	background-color: #29E4B9;
+	width: 100%;
+	border-radius: 8px;
+}
+
+.headertitle {
+	margin-top: 10px;
+	margin-botton: 10px;
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+}
+
+.dashtitle {
+	font-size: 20px;
+	color: grey
+}

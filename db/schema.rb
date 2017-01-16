@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20170113042023) do
     t.integer  "num_backup"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.integer  "status"
     t.datetime "start_date"
     t.datetime "end_date"
