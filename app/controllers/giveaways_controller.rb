@@ -61,5 +61,4 @@ private
 		@company = Company.find(params[:company_id])
 	end
 
-
 end

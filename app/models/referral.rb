@@ -1,4 +1,4 @@
-class Referal < ApplicationRecord
+class Referral < ApplicationRecord
 
 	# Validations
 	validates :participant_id, presence: true
