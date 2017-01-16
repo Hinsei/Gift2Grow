@@ -1,3 +1,27 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#welcome_text {
+font-family: 'Arvo', Georgia, Times, serif;
+	font-size: 20px;
+	line-height: 100px;
+	text-align: center;
+}
+
+#app_tweet {
+font-family: 'Allan', Helvetica, Arial, sans-serif;
+	font-size: 80px;
+	line-height: 80px;
+	text-align: center;
+	color: #5c1075;
+	
+}
+
+.header-name {
+font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+	font-size: 30px;
+	line-height: 65px;
+	color: #b3185e;
+}
+

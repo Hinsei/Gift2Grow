@@ -18,6 +18,23 @@
 @import "companies";
 @import "welcome";
 
+.navbar {
+    background-color: 	#380947;
+}
+
+
+.navbar-brand {
+	font-family: 'Lobster', Georgia, Times, serif;
+    text-align: center;
+    color: white;
+}
+
+
 .body {
-	background-image: url("pictures/backgoround.jpg") repeat;
+	background-image: url(https://subtlepatterns.com/patterns/seigaiha.png);
+	background-repeat: repeat;
+}
+
+.navbar .nav > li > a {
+    color: white;
 }

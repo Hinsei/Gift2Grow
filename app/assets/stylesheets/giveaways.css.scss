@@ -2,13 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 #giveaways-ongoing {
 	height: 450px;
 	width: 49%;
 	border: grey 1px solid;
 	float: left;
 	border-radius: 8px;
-	
 };
 
 #giveaways-finished {
@@ -41,4 +41,13 @@
 .dashtitle {
 	font-size: 20px;
 	color: grey
+}
+
+
+.header-name {
+	font-family: 'Lobster', Georgia, Times, serif;
+	font-size: 50px;
+	line-height: 70px;
+	text-align: center;
+   
 }
