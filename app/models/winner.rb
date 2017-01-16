@@ -18,7 +18,7 @@ class Winner < ApplicationRecord
 
 		unless main_container.count == targeted_giveaway.num_winner
 			main_container << entries.shuffle.sample(targeted_giveaway.num_winner, random: rand)
-			self.winners = main_container.first
+			self.main_winners = main_container.first
 			entries = entries - main_container.shift
 		end
 
@@ -28,12 +28,11 @@ class Winner < ApplicationRecord
 			entries = entries - backup_container.shift
 		end
 
-		if self.winners.count == targeted_giveaway.num_winner && self.backup_winners.count == targeted_giveaway.num_backup
+		if self.main_winners.count == targeted_giveaway.num_winner && self.backup_winners.count == targeted_giveaway.num_backup
 			self.save
 		else
 			raise "Something went wrong"
 		end
-
 	end
 
 end
