@@ -3,14 +3,20 @@
   <head>
     <title>Gift2grow</title>
     <%= csrf_meta_tags %>
-
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:bold' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/css?family=Allan:bold' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="icon" type="image/jpg" href="https://cdn3.iconfinder.com/data/icons/badger-s-christmas/300/present-512.png">
   </head>
 
   <!-- nav bar -->
   <% if login? %>
-    <nav class="navbar navbar-default">
+    <nav class="navbar">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false">
@@ -45,7 +51,7 @@
       </div>
     </nav>
 	 <% else %>
-    <nav class="navbar navbar-default">
+    <nav class="navbar">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -58,7 +64,7 @@
         </div>
         <div class= "collapse navbar-collapse" id="collapse-1">
           <ul class="nav navbar-nav">
-            <li>
+            <li id="navbar-nav">
               <%= link_to 'Signup', signup_path %>
             </li>
             <li>
