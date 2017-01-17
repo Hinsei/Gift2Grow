@@ -14,7 +14,7 @@ class ParticipantsController < ApplicationController
 			ParticipantJoinMailer.join_email(@participant)
 			redirect_to @participant
 		 elsif @participant.save
-		 	byebug
+			# 	byebug
 		 	ParticipantJoinMailer.join_email(@participant)
 	    redirect_to @participant
 		 else

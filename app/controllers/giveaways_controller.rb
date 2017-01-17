@@ -15,7 +15,9 @@ class GiveawaysController < ApplicationController
 	def create
 		@giveaway = @company.giveaways.new(giveaway_params)
 		if @giveaway.save
-			Winner.create(giveaway_id: @giveaway.id)
+			winner = Winner.create(giveaway_id: @giveaway.id)
+			delay_interval = @giveaway.end_date - DateTime.now
+			WinnerSelectionJob.delay_until(delay_interval).perform_later(winner)
 			flash[:notice] = "Giveaway creation successfull"
 			redirect_to company_giveaways_path(@company, @giveaway)
 		else
@@ -25,7 +27,7 @@ class GiveawaysController < ApplicationController
 	end
 
 	def show
-		if params[:giveaway_link].present?
+	if params[:giveaway_link].present?
 			@giveaway = Giveaway.find(params[:giveaway_link])
 		else
 			@giveaway = Giveaway.find(params[:company_id])
