@@ -1,4 +1,7 @@
 class ParticipantsController < ApplicationController
+	before_action :find_path, only: [:create]
+
+
 	def new
 		@participant = Participant.new
 	end
@@ -42,4 +45,7 @@ class ParticipantsController < ApplicationController
 		@giveaway = Giveaway.find(params[:gvId])
 	end
 
+	def find_path
+		@request = request.original_url
+	end
 end

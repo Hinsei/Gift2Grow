@@ -8,6 +8,7 @@
 		<p>
 			Hi <%= @participant.name %>,<br><br>
 			Your have successfully joined the giveaway!<br><br>
+			Here is your referer link <%= "http://gift2grow/" + @participant.giveaway.link + "/" + @participant.referral_identification %>
 			We will send you an email with further details should you be chosen as the winner.<br>
 			Good Luck!<br><br>
 			Meanwhile please visit
