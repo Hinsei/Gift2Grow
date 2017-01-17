@@ -1,4 +1,7 @@
 class ParticipantsController < ApplicationController
+	before_action :find_path, only: [:create]
+
+
 	def new
 		@participant = Participant.new
 	end
@@ -11,11 +14,10 @@ class ParticipantsController < ApplicationController
 			Referral.create(participant_id: @referral.id)
 			@referral.points += 1
 			@referral.save!
-			ParticipantJoinMailer.join_email(@participant)
+			ParticipantWelcomeJob.perform_later(@participant)
 			redirect_to @participant
 		 elsif @participant.save
-			# 	byebug
-		 	ParticipantJoinMailer.join_email(@participant)
+		 	ParticipantWelcomeJob.perform_later(@participant)
 	    redirect_to @participant
 		 else
 			 flash[:error] = "Failed"
@@ -43,4 +45,7 @@ class ParticipantsController < ApplicationController
 		@giveaway = Giveaway.find(params[:gvId])
 	end
 
+	def find_path
+		@request = request.original_url
+	end
 end
