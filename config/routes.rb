@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 	get "/companies/new" => "companies#new", :as => "signup"
 	get "/:giveaway_link/:referral_identification" => "giveaways#show"
 	get "/:giveaway_link" => "giveaways#show"
-
+  get "/welcome/about" => "welcome#about", :as => "about"
 
 
 end
