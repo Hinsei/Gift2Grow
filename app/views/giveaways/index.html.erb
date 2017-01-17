@@ -66,11 +66,16 @@
 											</div>
 											<div class="spacing"></div>
 											<div class="divider"></div>
+											<div class="spacing"></div>
 											<div class="row record">
-												<div class="col-md-2 col-md-offset-2 col-xs-2 col-xs-offset-2 timer">
-
+												<div class="col-md-8 col-md-offset-2 col-xs-2 col-xs-offset-2 timer">
+												  <script>
+												  	<% month = giveaway.end_date.strftime("%m").to_i - 1 %>
+												  	$('.timer').countdown({until: new Date(<%= giveaway.end_date.strftime("20%y, #{month}, %d") %>)})
+												  </script>
 												</div>
 											</div>
+											<div class="spacing"></div>
 											<div class="divider"></div>
 										</div>
 										<div class="modal-footer">
@@ -87,7 +92,7 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 						<h3 class="text-center empty">
-							No Giveaway Running atm. Create one now!
+							No Giveaway Running At The Momement. Create one now!
 						</h3>
 					</div>
 				</div>

@@ -57,5 +57,10 @@
 					<%= f.label :num_backup, "Number of Backup" %>
 					<%= f.select :num_backup, options_for_select([1,2,3,4,5,6,7,8,9,10]), {}, {class: "btn btn-default"} %>
 				</div>
-				<%= f.submit "#{@title} Giveaway", {class: "btn btn-default mainbutton1"}%>
+				<div class="row">
+					<div class="col-md-2 col-md-offset-5 col-xs-2 col-xs-offset-5">
+						<%= f.submit "#{@title} Giveaway", {class: "btn btn-default btn-block mainbutton1"}%>
+					</div>
+				</div>
+				<br>
 				<% end %>
