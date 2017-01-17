@@ -1,27 +1,31 @@
-
-<%= form_for @participant, :html => {:multipart => true} do |form| %>
-
-<div class= "text-center">
-  <div>
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
+      <h1 class="text-center">
+        You are one step away from joining <%= @giveaway.company.name %> sponsored giveaway
+      </h1>
+    </div>
   </div>
-
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <br>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
+      <%= form_for @participant, :html => { :multipart => true } do |form| %>
+        <div class="form-group">
+          <%= form.label :email %>
+          <%= form.text_field :email, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= form.label :name %>
+          <%= form.text_field :name, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= form.label :contact %>
+          <%= form.text_field :contact, class: "form-control" %>
+        </div><br>
+        <%= form.hidden_field :gvId, value: params[:gvId] %>
+        <%= form.hidden_field :refId, value: params[:refId] %>
+        <%= form.submit "Join This GiveAway", class: "btn btn-default btn-block mainbutton1" %>
+      <% end %>
+    </div>
   </div>
-
-  <div>
-    <%= form.label :contact %>
-    <%= form.text_field :contact %>
-  </div>
-
-  <%= form.hidden_field :gvId, value: params[:gvId] %>
-  <%= form.hidden_field :refId, value: params[:refId] %>
-
-  <%= form.submit "Join This GiveAway", class: "btn btn-default mainbutton1" %>
-
-
-<% end %>
 </div>

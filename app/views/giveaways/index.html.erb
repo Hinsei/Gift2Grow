@@ -17,60 +17,82 @@
 				</div>
 			</div>
 		</div>
+		<br>
 			<% if giveaways? %>
-				<div class="row">
-					<div class="col-md-4 col-xs-4">
-						<h3 class="text-center dashtitle">
-							Title
-						</h3>
-					</div>
-					<div class="col-md-3 col-xs-3">
-						<h3 class="text-center dashtitle">
-							Link						
-</h3>
-					</div>
-					<div class="col-md-2 col-xs-2">
-						<h3 class="text-center dashtitle">
-						 	Time Left
-						</h3>
-					</div>
-					<div class="col-md-3 col-xs-3">
-						<h3 class="text-center dashtitle">
-							Participants
-						</h3>
-					</div>
-				</div>
 				<% ongoing.each do |giveaway| %>
 					<div class="row">
-						<div class="col-md-4 col-xs-4">
-							<h4 class="text-center dashanswer">
-								<%= link_to giveaway.title, edit_company_giveaway_path(@company, giveaway)  %>
-							</h4>
-						</div>
-
-						<div class="col-md-3 col-xs-3">
-
-							<h4 class="text-center dashanswer">
-								<%= link_to "http://gift2grow/" + giveaway.link, company_giveaway_path(@company, giveaway) %>
-							</h4>
-						</div>
-						<div class="col-md-2 col-xs-2">
-							<h4 class="text-center dashanswer">
-								Timer
-							</h4>
-						</div>
-						<div class="col-md-3 col-xs-3">
-							<h4 class="text-center dashanswer">
-								<%= giveaway.participants.count %>
-							</h4>
+						<div class="col-md-8 col-md-offset-2">
+							<button type="button" class="btn btn-default btn-block mainbutton-3" data-toggle="modal" data-target="#myModal">
+								<%= giveaway.title %>
+							</button>
+							<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">
+													&times;
+												</span>
+											</button>
+											<h4 class="modal-title text-center"><%= giveaway.title %></h4>
+										</div>
+										<div class="modal-body dashboard-content">
+											<div class="row">
+												<h4 class="text-center dashboardHeaderDecoration">
+													Description
+												</h4>
+											</div>
+											<div class="row">
+												<div class="col-md-8 col-md-offset-2">
+													<p class="text-center">
+														<%= giveaway.description %>
+													</p>
+												</div>
+											</div>
+											<div class="spacing"></div>
+											<div class="row">
+												<div class="col-md-8 col-md-offset-2">
+													<h4 class="text-center dashboardHeaderDecoration">
+														Link To This Giveaway
+													</h4>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-8 col-md-offset-2">
+													<p class="text-center dashanswer">
+														<%= link_to "http://gift2grow/" + giveaway.link, company_giveaway_path(@company, giveaway) %>
+													</p>
+												</div>
+											</div>
+											<div class="spacing"></div>
+											<div class="divider"></div>
+											<div class="spacing"></div>
+											<div class="row record">
+												<div class="col-md-8 col-md-offset-2 col-xs-2 col-xs-offset-2 timer">
+												  <script>
+												  	<% month = giveaway.end_date.strftime("%m").to_i - 1 %>
+												  	$('.timer').countdown({until: new Date(<%= giveaway.end_date.strftime("20%y, #{month}, %d") %>)})
+												  </script>
+												</div>
+											</div>
+											<div class="spacing"></div>
+											<div class="divider"></div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default mainbutton-3" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
+					<div class="spacing"></div>
 				<% end %>
 			<% else %>
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 						<h3 class="text-center empty">
-							No Giveaway Running atm. Create one now!
+							No Giveaway Running At The Momement. Create one now!
 						</h3>
 					</div>
 				</div>
@@ -89,7 +111,7 @@
 		</div>
 			<% if winner? %>
 				<div class="row">
-					<div class="col-md4 col-xs-4">
+					<div class="col-md-4 col-xs-4">
 						<h3 class="text-center dashtitle">
 							Title
 						</h3>
@@ -98,23 +120,29 @@
 						<h3 class="text-center dashtitle">
 							Participants
 						</h3>
+					</div>
 					<div class="col-md-4 col-xs-4">
 						<h3 class="text-center dashtitle">
 							Stats
 						</h3>
 					</div>
-					</div>
 				</div>
 				<% finished.each do |giveaway| %>
 					<div class="row">
-						<div class="col-md-4 col-xs-4 dashanswer">
-							<%= giveaway.title %>
+						<div class="col-md-4 col-xs-4">
+							<h4 class="text-center dashanswer">
+								<%= giveaway.title %>
+							</h4>
 						</div>
-						<div class="col-md-4 col-xs-4 dashanswer">
-							<%= giveaway.participants.count %>
+						<div class="col-md-4 col-xs-4">
+							<h4 class="text-center dashanswer">
+								<%= giveaway.participants.count %>
+							</h4>
 						</div>
-						<div class="col-md-4 col-xs-4 dashanswer dashlink">
-							<%= link_to :stat %>
+						<div class="col-md-4 col-xs-4">
+							<h4 class="text-center dashanswer dashlink">
+								<%= link_to :stat %>
+							</h4>
 						</div>
 					</div>
 				<% end %>
@@ -122,11 +150,10 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 						<h3 class="text-center empty">
-							No Completed Giveaway atm.
+							No Completed Giveaway At The Moment.
 						</h3>
 					</div>
 				</div>
 			<% end %>
 	</div>
-
 </div>
