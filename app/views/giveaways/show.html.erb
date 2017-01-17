@@ -3,6 +3,7 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2" >
 			<h1 class="text-center">
+	
 				<%= @giveaway.title %>
 			</h1>
 		</div>
@@ -66,7 +67,7 @@
 	<br>
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 text-center">
-			<%= link_to "Next", new_participant_path(gvId: @giveaway.id), {class: "btn btn-default mainbutton1", id: "nextPart"} %>
+			<%= link_to "Next", new_participant_path(gvId: @giveaway.id, refId: params[:refId]), {class: "btn btn-default mainbutton1", id: "nextPart"} %>
 		</div>
 	</div>
 </div>

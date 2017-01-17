@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ 	<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+ </head>
+ <body>
+ 	<h1>
+ 		A winner for <%= @giveaway.title %> has been chosen!
+ 	</h1>
+ 	<p>
+ 		Hi <%= @company.name %>,<br><br>
+ 		We have determined the
+ 		<% if @giveaway.num_winner > 1 %>
+ 			winners
+ 		<% else %>
+ 			winner
+ 		<% end %>
+ 		for a giveaway that you initiated through our services.<br>
+ 		The winners and backup winner are as follows:-
+ 	</p>
+ 	<ol><span style="text-decoration: underline;">Main Winners</span>
+ 		<% @winners.each do |winner| %>
+ 			<li> Main Winner: <%= Participant.find(winner).name %>, Email: <%= Participant.find(winner).email %> </li>
+ 		<% end %>
+ 	</ol>
+ 	<ol><span style="text-decoration: underline;">Backup Winners</span>
+ 		<% @backups.each do |backup| %>
+ 			<li> Backup Winner: <%= Participant.find(backup).name %>, Email: <%= Participant.find(backup).email %> </li>
+ 		<% end %>
+ 	</ol>
+ 	<p>
+ 		Send an email to the main winners with collection instructions if you have not already specified it when creating a giveaway with us.<br>
+ 		Should they choose to be unresponsive, feel free to contact the backup winners directly or through your dashboard at our website!
+ 	</p>
+ 	<p>
+ 		Thank You for Choosing Us.<br><br>
+ 		Sincerely,<br>
+ 		The Gift2Grow Team.
+ 	</p>
+ 	<p><span style="font-size: 7px;">
+ 		Disclaimer: Gift2Grow is not responsible for the exchange process between the selected winner and responsible company.
+ 	</span></p>
+ </body>
+</html>

@@ -2,7 +2,7 @@ class Giveaway < ApplicationRecord
 	require 'carrierwave/orm/activerecord'
 	before_create :generate_link
 	before_create :set_status
-	enum status: {ongoin: 0, finished: 1}
+	enum status: {ongoing: 0, finished: 1}
 
 
 	#Associations
@@ -32,7 +32,7 @@ class Giveaway < ApplicationRecord
 private
 
 	def generate_link
-		self.link = "http://gift2grow/#{random_combo}"
+		self.link = "#{random_combo}"
 	end
 
 	def random_combo
