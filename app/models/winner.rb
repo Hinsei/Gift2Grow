@@ -30,6 +30,7 @@ class Winner < ApplicationRecord
 
 		if self.main_winners.count == targeted_giveaway.num_winner && self.backup_winners.count == targeted_giveaway.num_backup
 			self.save
+			self.giveaway.update(status: 1)
 		else
 			raise "Something went wrong"
 		end

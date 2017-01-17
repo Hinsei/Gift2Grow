@@ -3,6 +3,7 @@ class ParticipantsController < ApplicationController
 
 
 	def new
+		@giveaway = Giveaway.find(params[:gvId])
 		@participant = Participant.new
 	end
 
