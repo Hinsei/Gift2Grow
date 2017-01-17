@@ -14,3 +14,35 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "giveaways";
+@import "companies";
+@import "welcome";
+
+.navbar {
+    background-color: 	#380947;
+}
+
+
+.navbar-brand {
+	font-family: 'Lobster', Georgia, Times, serif;
+    text-align: center;
+    color: white;
+}
+
+.navbar-brand:hover {
+	color: yellow;
+}
+
+
+.body {
+	background-image: url(https://subtlepatterns.com/patterns/seigaiha.png);
+	background-repeat: repeat;
+}
+
+.navbar .nav > li > a {
+    color: white;
+}
+
+.navbar .nav >li > a:hover {
+	color: #b3185e;
+}

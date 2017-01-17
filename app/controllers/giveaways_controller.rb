@@ -27,10 +27,10 @@ class GiveawaysController < ApplicationController
 	end
 
 	def show
-	if params[:giveaway_link].present?
-			@giveaway = Giveaway.find(params[:giveaway_link])
+		if params[:giveaway_link].present?
+			@giveaway = Giveaway.where(link: params[:giveaway_link])[0]
 		else
-			@giveaway = Giveaway.find(params[:company_id])
+			@giveaway = Giveaway.find(params[:id])
 		end
 		@participant = Participant.where(referral_identification: params[:refId])[0]
 	end
