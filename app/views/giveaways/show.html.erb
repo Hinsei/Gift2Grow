@@ -1,3 +1,4 @@
+<div id="giveaway">
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2" >
@@ -30,7 +31,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 text-center" >
-			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="openModalButton">
+			<button type="button" class="btn btn-default mainbutton1" data-toggle="modal" data-target="#myModal" id="openModalButton">
 				Terms And Condition
 			</button>
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -56,7 +57,7 @@
 									</label>
 								</div>
 							</form>
-							<button type="button" class="btn btn-default" data-dismiss="modal" id="agree-button">Agree</button>
+							<button type="button" class="btn btn-default mainbutton1" data-dismiss="modal" id="agree-button">Agree</button>
 						</div>
 					</div>
 				</div>
@@ -66,7 +67,8 @@
 	<br>
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 text-center">
-			<%= link_to "Next", new_participant_path(gvId: @giveaway.id, refId: params[:refId]), {class: "btn btn-primary", id: "nextPart"} %>
+			<%= link_to "Next", new_participant_path(gvId: @giveaway.id, refId: params[:refId]), {class: "btn btn-default mainbutton1", id: "nextPart"} %>
 		</div>
 	</div>
+</div>
 </div>

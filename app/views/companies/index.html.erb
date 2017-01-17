@@ -6,16 +6,16 @@
 	</div>
 	<table align="center">
 			<tr>
-				<th id="1"> Name </th>
-				<th id="2"> Role </th>
-				<th id="3"></th>
-				<th id="4"> Delete </th>
+				<th> Name </th>
+				<th> Role </th>
+				<th></th>
+				<th> Delete </th>
 			</tr>
 				<% @companies.each do |company|%>
 			<tr>
 				<td><%= company.name %></td>
 				<td><%= company.role %></td><td><%= link_to "Edit", edit_company_path(company.id) %></td>
-				<td><%= link_to "Delete", company_path(company.id), data: { confirm: 'Are you sure?' },method: :delete  %> </td>
+				<td><%= link_to "Delete", company_path(company.id), data: { confirm: 'Are you sure?' }, method: :delete  %> </td>
 			</tr>
 				<% end %>
 			</table>
