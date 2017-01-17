@@ -2,7 +2,7 @@ class Giveaway < ApplicationRecord
 	require 'carrierwave/orm/activerecord'
 	before_create :generate_link
 	before_create :set_status
-	enum status: {ongoin: 0, finished: 1}
+	enum status: {ongoing: 0, finished: 1}
 
 
 	#Associations
