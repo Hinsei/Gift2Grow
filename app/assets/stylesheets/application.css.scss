@@ -29,6 +29,10 @@
     color: white;
 }
 
+.navbar-brand:hover {
+	color: yellow;
+}
+
 
 .body {
 	background-image: url(https://subtlepatterns.com/patterns/seigaiha.png);
@@ -39,3 +43,6 @@
     color: white;
 }
 
+.navbar .nav >li > a:hover {
+	color: #b3185e;
+}
