@@ -27,7 +27,7 @@ class GiveawaysController < ApplicationController
 	end
 
 	def show
-		if params[:giveaway_link].present?
+	if params[:giveaway_link].present?
 			@giveaway = Giveaway.find(params[:giveaway_link])
 		else
 			@giveaway = Giveaway.find(params[:company_id])
