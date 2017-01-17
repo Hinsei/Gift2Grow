@@ -1,11 +1,11 @@
-// Place all the styles related to the giveaways_controller controller here.
+// Place all the styles related to the giveaways_controller controller here. color: #808EA2;
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
 #giveaways-ongoing {
 	height: 450px;
-	width: 49%;
+	width: 49.5%;
 	border: grey 1px solid;
 	float: left;
 	border-radius: 8px;
@@ -13,7 +13,7 @@
 
 #giveaways-finished {
 	height: 450px;
-	width: 49%;
+	width: 49.5%;
 	border: grey 1px solid;
 	float: right;
 	border-radius: 8px;
@@ -22,13 +22,13 @@
 
 .empty {
 	color: lightgrey;
-}
+};
 
 .header {
 	background-color: #29E4B9;
 	width: 100%;
 	border-radius: 8px;
-}
+};
 
 .headertitle {
 	margin-top: 10px;
@@ -36,12 +36,17 @@
 	font-size: 20px;
 	color: white;
 	font-weight: bold;
-}
+};
 
 .dashtitle {
-	font-size: 20px;
-	color: grey
-}
+  font-size: 15px;
+	color: grey;
+	font-weight: bold;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding-right: 1px;
+	padding-left: 1px;
+};
 
 
 .header-name {
@@ -49,5 +54,31 @@
 	font-size: 50px;
 	line-height: 70px;
 	text-align: center;
-   
-}
+};
+
+.dashanswer {
+	font-size: 15px;
+	color: #808EA2;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding-right: 1px;
+	padding-left: 1px;
+};
+
+a:hover {
+	text-decoration: none;
+};
+
+.form-group {
+	color: grey;
+};
+
+
+#giveaways {
+	height: 600px;
+	width: 50%;
+	border: grey 1px solid;
+	float: left;
+	border-radius: 8px;
+};
+

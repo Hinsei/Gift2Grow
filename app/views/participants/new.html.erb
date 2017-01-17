@@ -1,6 +1,7 @@
 
 <%= form_for @participant, :html => {:multipart => true} do |form| %>
 
+<div class= "text-center">
   <div>
     <%= form.label :email %>
     <%= form.text_field :email %>
@@ -17,7 +18,10 @@
   </div>
 
   <%= form.hidden_field :gvId, value: params[:gvId] %>
-  
-  <%= form.submit "Join This GiveAway" %>
+  <%= form.hidden_field :refId, value: params[:refId] %>
+
+  <%= form.submit "Join This GiveAway", class: "btn btn-default mainbutton1" %>
+
 
 <% end %>
+</div>

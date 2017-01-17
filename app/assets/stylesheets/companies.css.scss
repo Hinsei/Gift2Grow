@@ -26,20 +26,12 @@
 	border: none;
 }
 
-.mainbutton2 {
-	font-weight: bold;
-	font-size: 18px;
-	background-color: white;
-	color: grey;
-	width: 49%;
-	margin: auto;
-}
 
 .mainbutton1 {
+	color: white;
 	font-weight: bold;
 	font-size: 18px;
 	background-color: #29E4B9;
-	color: white;
 	border: none;
 }
 
@@ -58,5 +50,44 @@ font-family: 'Lobster', Georgia, Times, serif;
 	text-align: center;
 }
 
+.mainbutton2 {
+	font-weight: bold;
+	font-size: 18px;
+	background-color: white;
+	color: grey;
+	width: 49%;
+	margin: auto;
+}
+
+.mainbutton2-5 {
+	font-weight: bold;
+	font-size: 18px;
+	background-color: white;
+	color: grey;
+	width: 18%;
+}
+
+
+
+.form-control {
+	color: black;
+}
+
+tr {
+	border-bottom: 1px solid lightgrey;
+}
+
+td {
+	padding: 10px;
+	text-align: left;
+}
+
+th {
+	padding: 10px;
+	text-align: left;
+	color: grey;
+	font-size: 16px;
+	width: 30%;
+}
 
 

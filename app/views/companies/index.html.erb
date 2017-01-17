@@ -1,16 +1,25 @@
+
 <h2 class="companyshow-text"> All Companies with G2G </h2>
 
-<table>
-<tr>
-	<th> Name </th>
-	<th> Role </th>
-	<th> Delete </th>
-</tr>
-	<% @companies.each do |company|%>
-<tr>
-	<td><%= company.name %></td>
-	<td><%= company.role %><%= link_to "Edit", edit_company_path(company.id) %></td>
-	<td><%= link_to "Delete", company_path(company.id), data: { confirm: 'Are you sure?' },method: :delete  %> </td>
-</tr>
-	<% end %>
-</table>
+<div class= "container-fluid">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 col-xs-8  col-xs-offset-2">
+			<h1 class="text-center"> All Companies with G2G </h1>
+		</div>
+	</div>
+	<table align="center">
+			<tr>
+				<th> Name </th>
+				<th> Role </th>
+				<th></th>
+				<th> Delete </th>
+			</tr>
+				<% @companies.each do |company|%>
+			<tr>
+				<td><%= company.name %></td>
+				<td><%= company.role %></td><td><%= link_to "Edit", edit_company_path(company.id) %></td>
+				<td><%= link_to "Delete", company_path(company.id), data: { confirm: 'Are you sure?' }, method: :delete  %> </td>
+			</tr>
+				<% end %>
+			</table>
+</div>

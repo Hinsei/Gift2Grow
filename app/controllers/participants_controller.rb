@@ -4,12 +4,19 @@ class ParticipantsController < ApplicationController
 	end
 
 	def create
-
 		@participant = Participant.new(participant_params)
 		@participant.giveaway_id = params[:participant][:gvId]
-	   if @participant.save
-	     redirect_to @participant
-	     #check route
+		@referral = Participant.where(referral_identification: params[:participant][:refId])[0]
+	   if @referral.present? && @participant.save
+			Referral.create(participant_id: @referral.id)
+			@referral.points += 1
+			@referral.save!
+			ParticipantJoinMailer.join_email(@participant)
+			redirect_to @participant
+		 elsif @participant.save
+		 	byebug
+		 	ParticipantJoinMailer.join_email(@participant)
+	    redirect_to @participant
 		 else
 			 flash[:error] = "Failed"
 			 render :new
@@ -19,6 +26,8 @@ class ParticipantsController < ApplicationController
 
 	def show
 		@participant = Participant.find(params[:id])
+		@giveaway = @participant.giveaway
+		@company = @participant.giveaway.company
 
 	end
 
