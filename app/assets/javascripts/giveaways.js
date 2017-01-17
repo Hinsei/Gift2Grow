@@ -1,4 +1,4 @@
-$('document').on('turbolinks:load', function(){
+$(document).on('turbolinks:load',function(){
 	$('#nextPart').hide()
 
 	$('#agree-button').on('click', function(){
