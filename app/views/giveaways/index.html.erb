@@ -19,22 +19,22 @@
 		</div>
 			<% if giveaways? %>
 				<div class="row">
-					<div class="col-md-4 col-xs-4 dashtitle">
+					<div class="col-md-4 col-xs-4">
 						<h3 class="text-center dashtitle">
 							Title
 						</h3>
 					</div>
-					<div class="col-md-3 col-xs-3 dashtitle">
+					<div class="col-md-3 col-xs-3">
 						<h3 class="text-center dashtitle">
-							Link
-						</h3>
+							Link						
+</h3>
 					</div>
-					<div class="col-md-2 col-xs-2 dashtitle">
+					<div class="col-md-2 col-xs-2">
 						<h3 class="text-center dashtitle">
 						 	Time Left
 						</h3>
 					</div>
-					<div class="col-md-3 col-xs-3 dashtitle">
+					<div class="col-md-3 col-xs-3">
 						<h3 class="text-center dashtitle">
 							Participants
 						</h3>
@@ -42,23 +42,24 @@
 				</div>
 				<% ongoing.each do |giveaway| %>
 					<div class="row">
-						<div class="col-md-4 col-xs-4 dashanswer">
+						<div class="col-md-4 col-xs-4">
 							<h4 class="text-center dashanswer">
 								<%= link_to giveaway.title, edit_company_giveaway_path(@company, giveaway)  %>
 							</h4>
 						</div>
 
 						<div class="col-md-3 col-xs-3">
-							<h4 class="text-center">
+
+							<h4 class="text-center dashanswer">
 								<%= link_to "http://gift2grow/" + giveaway.link, company_giveaway_path(@company, giveaway) %>
 							</h4>
 						</div>
-						<div class="col-md-2 col-xs-2 dashanswer">
+						<div class="col-md-2 col-xs-2">
 							<h4 class="text-center dashanswer">
 								Timer
 							</h4>
 						</div>
-						<div class="col-md-3 col-xs-3 dashanswer">
+						<div class="col-md-3 col-xs-3">
 							<h4 class="text-center dashanswer">
 								<%= giveaway.participants.count %>
 							</h4>
@@ -88,16 +89,16 @@
 		</div>
 			<% if winner? %>
 				<div class="row">
-					<div class="col-md4 col-xs-4 dashtitle">
+					<div class="col-md4 col-xs-4">
 						<h3 class="text-center dashtitle">
 							Title
 						</h3>
 					</div>
-					<div class="col-md-4 col-xs-4 dashtitle">
+					<div class="col-md-4 col-xs-4">
 						<h3 class="text-center dashtitle">
 							Participants
 						</h3>
-					<div class="col-md-4 col-xs-4 dashtitle">
+					<div class="col-md-4 col-xs-4">
 						<h3 class="text-center dashtitle">
 							Stats
 						</h3>

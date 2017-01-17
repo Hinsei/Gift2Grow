@@ -6,7 +6,7 @@ class WinnerSelectionJob < ApplicationJob
   	winner_object.choose_winner
   	winners = winner_object.main_winners
   	winners.each do |winner|
-  		GiveawayMailer.winner_email(Participant.where(id: winner, giveaway_id: winner_object.giveaway_id).deliver_now
+  		GiveawayMailer.winner_email(Participant.where(id: winner, giveaway_id: winner_object.giveaway_id)[0]).deliver_now
   	end
   	# consolation email for non-winners
   	all_winners = []
