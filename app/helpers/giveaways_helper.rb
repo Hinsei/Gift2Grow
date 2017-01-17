@@ -9,15 +9,7 @@ module GiveawaysHelper
 	end
 
 	def winner?
-		counter = 0
-		@company.giveaways.each do |giveaway|
-			unless giveaway.winner.main_winners.empty?
-				counter += 1
-			end
-		end
-		if counter == 0
-			false
-		else
+		if finished.count > 0
 			true
 		end
 	end
