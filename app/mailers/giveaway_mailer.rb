@@ -3,7 +3,7 @@ class GiveawayMailer < ApplicationMailer
 
 	def winner_email(winner)
 		@participant = winner
-		@giveaway = winner.giveaway
+		@giveaway = @participant.giveaway
 		mail(to: @participant.email, subject: "You Have Been Chosen As a Winner!")
 	end
 
@@ -17,7 +17,7 @@ class GiveawayMailer < ApplicationMailer
 
 	def consolation_email(participant)
 		@participant = participant
-		@giveaway = participant.giveaway
+		@giveaway = @participant.giveaway
 		mail(to: @participant.email, subject: "A Giveaway You Joined With Us Is Done")
 	end
 
