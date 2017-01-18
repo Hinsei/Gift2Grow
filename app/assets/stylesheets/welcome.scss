@@ -3,10 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .header-name {
-   font-family: 'Bree Serif', Georgia, serif;
-	font-size: 30px;
-	line-height: 65px;
-	color: #b3185e;
+    font-family: 'Rancho', Georgia, serif;
+	font-size: 50px;
+	line-height: 40px;
+	color: #B3185E;
 }
 
 #app_tweet {
@@ -16,7 +16,6 @@
 	text-align: center;
 	color: #5c1075;
 	top: 300px;
-	color: #5c1075;
 }
 
 
@@ -27,8 +26,8 @@
 
 #welcome_tweet_app {
 	position: relative;
-	top: 100px;
-	height: 550px;
+	top: 30px;
+	height: 600px;
 }
 
 #services {
@@ -37,9 +36,10 @@
 
 .container {
 	// background: url() repeat;
+	width: 100%;
     border: 2px solid black;
-	margin: 30px;
-	height: 400px;
+	// margin: 30px;
+	// height: 400px;
     background-color: #380947;
     border: 1px solid black;
 }

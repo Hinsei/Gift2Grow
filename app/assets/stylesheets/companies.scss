@@ -49,6 +49,7 @@ font-family: 'Lobster', Georgia, Times, serif;
 	font-size: 50px;
 	line-height: 100px;
 	text-align: center;
+	color: black;
 }
 
 .mainbutton2 {
@@ -68,6 +69,11 @@ font-family: 'Lobster', Georgia, Times, serif;
 	width: 18%;
 }
 
+.mainbutton-3 {
+	background-color: #29E4B9;
+    border: none;
+    color: black;
+}
 
 
 .form-control {
@@ -86,9 +92,26 @@ td {
 th {
 	padding: 10px;
 	text-align: left;
-	color: #B3185E;
+	color: #B3185;
 	font-size: 16px;
 	width: 30%;
 }
 
+.form-container {
+	-moz-opacity:0.5;
+    -khtml-opacity: 0.5;    
+    opacity:0.8; 
+    filter:alpha(opacity=20);
+}
 
+#giveaways-ongoing {
+	background-color: white;
+}
+
+#giveaways-finished {
+	background-color: white;
+}
+
+.empty {
+	color: black;
+}

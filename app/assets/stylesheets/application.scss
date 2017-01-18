@@ -26,17 +26,24 @@
 .navbar-brand {
 	font-family: 'Lobster', Georgia, Times, serif;
     text-align: center;
-    color: white;
+    color: yellow;
 }
 
 .navbar-brand:hover {
-	color: yellow;
+	color: red;
 }
 
 
 .body {
-	background-image: url(https://subtlepatterns.com/patterns/seigaiha.png);
-	background-repeat: repeat;
+	background-image: url(https://www.bigspeak.com/wp-content/uploads/2015/12/iStock_000034670532Medium.jpg);
+	background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;   /* optional, center the image */
+	-moz-opacity:0.5;
+    -khtml-opacity: 0.5;    
+    opacity:0.9; 
+    filter:alpha(opacity=20);
+	
 }
 
 .navbar .nav > li > a {
