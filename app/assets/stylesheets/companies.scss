@@ -21,7 +21,7 @@
 	font-weight: bold;
 	font-size: 18px;
 	background-color: #29E4B9;
-	color: white;
+	color: black;
 	width: 49%;
 	margin: auto;
 	border: none;
@@ -29,9 +29,10 @@
 
 
 .mainbutton1 {
-	color: white;
+	color: black;
 	font-weight: bold;
 	font-size: 18px;
+	width: 90px;
 	background-color: #29E4B9;
 	border: none;
 }
@@ -55,7 +56,7 @@ font-family: 'Lobster', Georgia, Times, serif;
 .mainbutton2 {
 	font-weight: bold;
 	font-size: 18px;
-	background-color: white;
+	background-color: black;
 	color: grey;
 	width: 49%;
 	margin: auto;
@@ -64,7 +65,7 @@ font-family: 'Lobster', Georgia, Times, serif;
 .mainbutton2-5 {
 	font-weight: bold;
 	font-size: 18px;
-	background-color: white;
+	background-color: black;
 	color: grey;
 	width: 18%;
 }
@@ -100,7 +101,7 @@ th {
 .form-container {
 	-moz-opacity:0.5;
     -khtml-opacity: 0.5;    
-    opacity:0.8; 
+    opacity:0.9; 
     filter:alpha(opacity=20);
 }
 
