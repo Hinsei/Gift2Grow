@@ -3,11 +3,10 @@
   <head>
     <title>Gift2grow</title>
     <%= csrf_meta_tags %>
+     <link href="http://fonts.googleapis.com/css?family=Rancho" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:bold' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
    <link href='http://fonts.googleapis.com/css?family=Allan:bold' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -69,6 +68,9 @@
             </li>
             <li>
               <%= link_to 'Login', login_path %>
+            </li>
+            <li>
+              <%= link_to 'About Us', about_path %>
             </li>
           </ul>
         </div>

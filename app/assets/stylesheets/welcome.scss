@@ -2,26 +2,59 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#welcome_text {
-font-family: 'Arvo', Georgia, Times, serif;
-	font-size: 20px;
-	line-height: 100px;
-	text-align: center;
-}
-
-#app_tweet {
-font-family: 'Allan', Helvetica, Arial, sans-serif;
-	font-size: 80px;
-	line-height: 80px;
-	text-align: center;
-	color: #5c1075;
-	
-}
-
 .header-name {
-font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+   font-family: 'Bree Serif', Georgia, serif;
 	font-size: 30px;
 	line-height: 65px;
 	color: #b3185e;
 }
 
+#app_tweet {
+    font-family: 'Lobster', Georgia, Times, serif;
+	font-size: 80px;
+	line-height: 80px;
+	text-align: center;
+	color: #5c1075;
+	top: 300px;
+	color: #5c1075;
+}
+
+
+.icon {
+    position: center;
+    top: 300px;
+}
+
+#welcome_tweet_app {
+	position: relative;
+	top: 100px;
+	height: 550px;
+}
+
+#services {
+	height: 550px;
+}
+
+.container {
+	// background: url() repeat;
+    border: 2px solid black;
+	margin: 30px;
+	height: 400px;
+    background-color: #380947;
+    border: 1px solid black;
+}
+
+h1 {
+	 font-family: 'Rancho', Georgia, serif;
+	 font-size: 50px;
+    color: white;
+}
+
+h2 {
+	font-size: 25px;
+	color: white;
+}
+
+p {
+	color: white;
+}
