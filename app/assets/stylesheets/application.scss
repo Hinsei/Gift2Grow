@@ -17,6 +17,7 @@
 @import "giveaways";
 @import "companies";
 @import "welcome";
+@import "ribbon";
 
 .navbar {
     background-color: 	#380947;
@@ -36,14 +37,11 @@
 
 .body {
 	background-image: url(https://www.bigspeak.com/wp-content/uploads/2015/12/iStock_000034670532Medium.jpg);
-	background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
-    background-position: center center;   /* optional, center the image */
+	background-size:     cover;
 	-moz-opacity:0.5;
-    -khtml-opacity: 0.5;    
-    opacity:0.9; 
-    filter:alpha(opacity=20);
-	
+  -khtml-opacity: 0.5;
+    opacity:0.9;
+   filter:alpha(opacity=20);
 }
 
 .navbar .nav > li > a {
@@ -58,6 +56,13 @@
 	background-color: white;
 	border: black 2px solid;
 	border-radius: 50px;
+	opacity: 1.0;
+}
+
+.form-container-borderless {
+	background-color: white;
+	opacity: 0.9;
+	font-family: 'Lobster';
 }
 
 .spacing {
