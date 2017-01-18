@@ -83,11 +83,27 @@
 					</div>
 				</div>
 				<br>
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 text-center">
-						<%= link_to "Next", new_participant_path(gvId: @giveaway.id, refId: params[:referral_identification]), {class: "btn btn-default mainbutton1", id: "nextPart"} %>
+				<% if current_company == @giveaway.company %>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 text-center">
+							<h3 class="text-center">Participants Will Have A Join Button Here Not You :D</h3>
+						</div>
 					</div>
-				</div>
+				<% else %>
+					<%if @giveaway.over? %>
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 text-center">
+								<h3 class="text-center">Sorry This Giveaway Has Ended, Look Out For The Next One</h3>
+							</div>
+						</div>
+					<% else %>
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 text-center">
+								<%= link_to "Next", new_participant_path(gvId: @giveaway.id, refId: params[:referral_identification]), {class: "btn btn-default mainbutton1", id: "nextPart"} %>
+							</div>
+						</div>
+					<% end %>
+				<% end %>
 				<br>
 			</div>
 		</div>

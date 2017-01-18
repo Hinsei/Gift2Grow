@@ -29,6 +29,14 @@ class Giveaway < ApplicationRecord
 	#Associations
 	belongs_to :company
 
+	def over?
+		if self.status == 1
+			return true
+		else
+			return false
+		end
+	end
+
 private
 
 	def generate_link

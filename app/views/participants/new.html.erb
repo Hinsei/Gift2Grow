@@ -25,11 +25,19 @@
         </div><br>
         <%= form.hidden_field :gvId, value: params[:gvId] %>
         <%= form.hidden_field :refId, value: params[:refId] %>
-        <div class="row">
-          <div class="col-md-4 col-md-offset-4 col-xs-offset-4 col-xs-4">
-            <%= form.submit "Join This GiveAway", class: "btn btn-default btn-block mainbutton1" %>
+        <% unless @giveaway.over? %>
+          <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-xs-offset-4 col-xs-4">
+              <%= form.submit "Join This GiveAway", class: "btn btn-default btn-block mainbutton1" %>
+            </div>
           </div>
-        </div>
+        <% else %>
+          <div class="row">
+              <div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 text-center">
+                <h3 class="text-center">Sorry This Giveaway Has Ended, Look Out For The Next One</h3>
+              </div>
+            </div>
+        <% end %>
         <div class="small-divider"></div>
       <% end %>
     </div>
