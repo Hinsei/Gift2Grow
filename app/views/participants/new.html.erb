@@ -1,8 +1,8 @@
-<div class="container-fluid">
+<div class="container-fluid form-container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
       <h1 class="text-center">
-        You are one step away from joining <%= @giveaway.company.name %> sponsored giveaway
+        "You are one step away from joining <%= @giveaway.company.name %> sponsored giveaway"
       </h1>
     </div>
   </div>
@@ -25,6 +25,7 @@
         <%= form.hidden_field :gvId, value: params[:gvId] %>
         <%= form.hidden_field :refId, value: params[:refId] %>
         <%= form.submit "Join This GiveAway", class: "btn btn-default btn-block mainbutton1" %>
+        <br>
       <% end %>
     </div>
   </div>
