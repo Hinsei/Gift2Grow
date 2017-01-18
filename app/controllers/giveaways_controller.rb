@@ -28,7 +28,6 @@ class GiveawaysController < ApplicationController
 	end
 
 	def show
-
 		if params[:giveaway_link].present?
 			@giveaway = Giveaway.where(link: params[:giveaway_link])[0]
 		else
@@ -59,7 +58,7 @@ class GiveawaysController < ApplicationController
 	end
 
 	def original_url
-		 request.base_url + request.original_fullpath
+		 request.base_url
 	end
 
 
