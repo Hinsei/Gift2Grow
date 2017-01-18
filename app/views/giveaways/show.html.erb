@@ -3,9 +3,27 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2" >
 			<h1 class="text-center">
-
 				<%= @giveaway.title %>
 			</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1 col-xs-8 col-xs-offset-2">
+			<div class="divider"></div>
+			<div class="spacing"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2" id="timer-container">
+			<script>
+				$("#timer-container").countdown({until: new Date("<%= @giveaway.end_date.strftime("20%y, %m, %d") %>")})
+			</script>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1 col-xs-8 col-xs-offset-2">
+			<div class="spacing"></div>
+			<div class="divider"></div>
 		</div>
 	</div>
 	<div class="row">
