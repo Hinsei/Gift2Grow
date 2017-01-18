@@ -65,6 +65,36 @@
 												</div>
 											</div>
 											<div class="spacing"></div>
+											<div class="row">
+												<div class="col-md-8 col-md-offset-2">
+													<h4 class="text-center dashboardHeaderDecoration">
+														Current Number of Participants In This Giveaway
+													</h4>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-8 col-md-offset-2">
+													<p class="text-center black">
+														<%= giveaway.participants.count %>
+													</p>
+												</div>
+											</div>
+											<div class="spacing"></div>
+											<div class="row">
+												<div class="col-md-8 col-md-offset-2">
+													<h4 class="text-center dashboardHeaderDecoration">
+														Current Number of Succesfull Shares
+													</h4>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-8 col-md-offset-2">
+													<p class="text-center black">
+														<%= giveaway.shares %>
+													</p>
+												</div>
+											</div>
+											<div class="spacing"></div>
 											<div class="divider"></div>
 											<div class="spacing"></div>
 											<div class="row record">
@@ -152,6 +182,21 @@
 												<div class="col-md-8 col-md-offset-2">
 													<p class="text-center dashanswer black">
 														<%= giveaway.participants.count %>
+													</p>
+												</div>
+											</div>
+											<div class="spacing"></div>
+											<div class="row">
+												<div class="col-md-8 col-md-offset-2">
+													<h4 class="text-center dashboardHeaderDecoration">
+														Total Number of Shares
+													</h4>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-8 col-md-offset-2">
+													<p class="text-center black">
+														<%= giveaway.shares %>
 													</p>
 												</div>
 											</div>
