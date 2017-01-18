@@ -40,6 +40,7 @@ class GiveawaysController < ApplicationController
 	end
 
 	def update
+
 		if @giveaway.update(giveaway_params)
 			redirect_to company_giveaway_path(@company, @giveaway)
 		else
@@ -54,6 +55,12 @@ class GiveawaysController < ApplicationController
 			redirect_to company_giveaway_path(@company, @giveaway)
 		end
 	end
+
+	def original_url
+		byebug
+		 base_url + original_fullpath
+	end
+
 
 private
 
