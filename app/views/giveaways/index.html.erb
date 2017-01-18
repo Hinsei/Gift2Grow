@@ -70,8 +70,7 @@
 											<div class="row record">
 												<div class="col-md-8 col-md-offset-2 col-xs-2 col-xs-offset-2 timer">
 												  <script>
-												  	<% month = giveaway.end_date.strftime("%m").to_i - 1 %>
-												  	$('.timer').countdown({until: new Date(<%= giveaway.end_date.strftime("20%y, #{month}, %d") %>)})
+												  	$('.timer').countdown({until: new Date(<%= giveaway.end_date.strftime("20%y, %m, %d") %>)})
 												  </script>
 												</div>
 											</div>
