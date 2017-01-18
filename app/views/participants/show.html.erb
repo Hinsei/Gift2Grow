@@ -35,7 +35,7 @@
 				Share this link to increase your chance!
 			</h4>
 			<h4 class="text-center">
-	    <%= link_to "http://gift2grow/" + @participant.giveaway.link + "/" + @participant.referral_identification,  company_giveaway_path(@company, @giveaway, refId: @participant.referral_identification) %>
+	    <%= link_to @url + "/" + @participant.giveaway.link + "/" + @participant.referral_identification,  company_giveaway_path(@company, @giveaway, refId: @participant.referral_identification) %>
 			</h4>
 		</div>
 	</div>

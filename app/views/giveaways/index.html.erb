@@ -60,7 +60,7 @@
 											<div class="row">
 												<div class="col-md-8 col-md-offset-2">
 													<p class="text-center dashanswer">
-														<%= link_to url_for + giveaway.link, company_giveaway_path(@company, giveaway) %>
+														<%= link_to @url +"/"+ giveaway.link, company_giveaway_path(@company, giveaway) %>
 													</p>
 												</div>
 											</div>

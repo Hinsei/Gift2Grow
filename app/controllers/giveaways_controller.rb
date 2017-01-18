@@ -5,6 +5,7 @@ class GiveawaysController < ApplicationController
 
 	def index
 		@giveaways = @company.giveaways.all
+		@url = original_url
 	end
 
 	def new
@@ -27,6 +28,7 @@ class GiveawaysController < ApplicationController
 	end
 
 	def show
+
 		if params[:giveaway_link].present?
 			@giveaway = Giveaway.where(link: params[:giveaway_link])[0]
 		else
@@ -57,8 +59,7 @@ class GiveawaysController < ApplicationController
 	end
 
 	def original_url
-		byebug
-		 base_url + original_fullpath
+		 request.base_url + request.original_fullpath
 	end
 
 
