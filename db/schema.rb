@@ -3,7 +3,7 @@
 # incrementally modify your database, and then regenerate this schema definition.
 #
 # Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
+# database schema. If you need to create the application database on anothergit
 # system, you should be using db:schema:load, not running all the migrations
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
@@ -42,8 +42,6 @@ ActiveRecord::Schema.define(version: 20170116042259) do
     t.integer  "num_backup"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-    t.datetime "start_date"
-    t.datetime "end_date"
     t.integer  "status"
     t.datetime "start_date"
     t.datetime "end_date"

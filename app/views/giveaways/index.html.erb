@@ -20,14 +20,6 @@
 		<br>
 			<% if giveaways? %>
 				<% ongoing.each do |giveaway| %>
-					<div class="row" id="outside<%= giveaway.id %>">
-						<script>
-							$("#outside<%= giveaway.id %>").countdown({until: new Date("<%= giveaway.end_date.strftime("20%y, %m, %d") %>")})
-							$("#myModal<%= giveaway.id %>").on('shown.bs.modal', function(){
-								$("#timer<%= giveaway.id %>").countdown({until: new Date("<%= giveaway.end_date.strftime("20%y, %m, %d") %>")})
-							})
-						 </script>
-					</div>
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2">
 							<button type="button" class="btn btn-default btn-block mainbutton-3" data-toggle="modal" data-target="#myModal<%= giveaway.id %>">
@@ -78,9 +70,6 @@
 											<div class="row record">
 												<div class="col-md-8 col-md-offset-2 col-xs-2 col-xs-offset-2" id="timer<%= giveaway.id %>">
 												  <script>
-												  	$("#timer<%= giveaway.id%>").focus(function(){
-												  		alert("hi")
-												  	})
 												  	$("#timer<%= giveaway.id %>").countdown({until: new Date("<%= giveaway.end_date.strftime("20%y, %m, %d") %>")})
 												  </script>
 												</div>
@@ -166,34 +155,3 @@
 				</div>
 			<% end %>
 	</div>
-</div>
-<div style="background-color:red;">
-	<div id="1">
-		<script>
-			$("#1").countdown({until: new Date("2017, 8, 15")})
-		</script>
-	</div>
-	<div id="2">
-		<script>
-			$("#2").countdown({until: new Date("2017, 5, 15")})
-		</script>
-	</div>
-	<div id="3">
-		<script>
-			$("#3").countdown({until: new Date("2017, 7, 15")})
-		</script>
-	</div>
-	<div id="4">
-		<script>
-			$("#4").countdown({until: new Date("2017, 02, 18")})
-		</script>
-	</div>
-	<div id="5">
-		<script>
-			$("#5").countdown({until: new Date("2017, 2, 18")})
-		</script>
-	</div>
-</div>
-
-$("#4").countdown({until: new Date("2017, 2, 18")})
-$("#timer4").countdown({until: new Date("2017, 02, 18")})
