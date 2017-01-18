@@ -5,6 +5,7 @@ class ParticipantsController < ApplicationController
 	def new
 		@giveaway = Giveaway.find(params[:gvId])
 		@participant = Participant.new
+		@url = original_url
 	end
 
 	def create
@@ -31,8 +32,14 @@ class ParticipantsController < ApplicationController
 		@participant = Participant.find(params[:id])
 		@giveaway = @participant.giveaway
 		@company = @participant.giveaway.company
+		@url = original_url
 
 	end
+
+	def original_url
+		 request.base_url
+	end
+
 
 	def destroy
 
