@@ -37,7 +37,7 @@
 
 .body {
 	background-image: url(https://www.bigspeak.com/wp-content/uploads/2015/12/iStock_000034670532Medium.jpg);
-	background-size:     cover;
+	background-size: cover;
 	-moz-opacity:0.5;
   -khtml-opacity: 0.5;
     opacity:0.9;
@@ -127,4 +127,38 @@
 
 .container-fluid {
 	width: 100%;
+}
+
+
+// footer testing
+.copyright {
+	color: grey;
+}
+
+.title-widget {
+	font-size: 25px;
+}
+
+.mom {
+		color: grey;
+	size: 10px;
+	
+}
+
+.son {
+	font-size: 13px;
+	line-height: 10px;
+}
+
+.footer-bottom {    
+  width: 100%;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.our-service-background {
+   height: 100%;
 }
