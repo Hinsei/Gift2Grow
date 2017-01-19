@@ -94,13 +94,13 @@
 													</p>
 												</div>
 											</div>
-											<div class="spacing"></div>
+											<div class="small-divider"></div>
 											<div class="divider"></div>
 											<div class="spacing"></div>
 											<div class="row record">
 												<div class="col-md-8 col-md-offset-2 col-xs-2 col-xs-offset-2" id="timer<%= giveaway.id %>">
 												  <script>
-												  	$("#timer<%= giveaway.id %>").countdown({until: new Date("<%= giveaway.end_date.strftime("20%y, %m, %d") %>")})
+												  	$("#timer<%= giveaway.id %>").countdown({until: Math.round((new Date("<%= giveaway.end_date %>") - new Date ()) / 1000)})
 												  </script>
 												</div>
 											</div>
@@ -200,7 +200,7 @@
 													</p>
 												</div>
 											</div>
-											<div class="spacing"></div>
+											<div class="small-divider"></div>
 											<div class="divider"></div>
 											<div class="spacing"></div>
 											<div class="row record">
@@ -248,3 +248,4 @@
 				</div>
 			<% end %>
 	</div>
+</div>

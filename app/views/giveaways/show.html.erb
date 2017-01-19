@@ -15,7 +15,7 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 form-container" id="timer-container">
 				<script>
-					$("#timer-container").countdown({until: new Date("<%= @giveaway.end_date.strftime("20%y, %m, %d") %>")})
+					$("#timer-container").countdown({until: Math.round((new Date("<%= @giveaway.end_date %>") - new Date ()) / 1000) })
 				</script>
 			</div>
 		</div>
