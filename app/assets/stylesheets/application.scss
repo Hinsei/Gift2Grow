@@ -128,3 +128,9 @@
 .container-fluid {
 	width: 100%;
 }
+
+@media screen and (max-width: 993px) {
+	.record {
+		display: none;
+	}
+}
