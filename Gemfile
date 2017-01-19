@@ -38,6 +38,7 @@ gem 'figaro'
 gem 'font-awesome-rails'
 gem 'sidekiq'
 gem 'jquery-countdown-rails'
+gem 'carrierwave-aws'
 
 
 # Use Capistrano for deployment

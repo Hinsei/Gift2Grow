@@ -14,6 +14,7 @@ class GiveawaysController < ApplicationController
 	end
 
 	def create
+		byebug
 		@giveaway = @company.giveaways.new(giveaway_params)
 		if @giveaway.save
 			winner = Winner.create(giveaway_id: @giveaway.id)
