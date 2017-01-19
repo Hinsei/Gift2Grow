@@ -5,6 +5,9 @@ class GiveawaysController < ApplicationController
 
 	def index
 		@giveaways = @company.giveaways.all
+		gon.push({
+			finished_giveaway: js_id
+			})
 		@url = original_url
 	end
 
@@ -14,7 +17,6 @@ class GiveawaysController < ApplicationController
 	end
 
 	def create
-		byebug
 		@giveaway = @company.giveaways.new(giveaway_params)
 		if @giveaway.save
 			winner = Winner.create(giveaway_id: @giveaway.id)
@@ -84,6 +86,14 @@ private
 		else
 			@company = Company.find(Giveaway.find_by(link: params[:giveaway_link]).company_id)
 		end
+	end
+
+	def js_id
+		@array = []
+		@company.giveaways.where(status: 1).each do |giveaway|
+			@array << giveaway.id
+		end
+		@array
 	end
 
 end

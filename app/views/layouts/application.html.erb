@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gift2grow</title>
     <%= csrf_meta_tags %>
+    <%= include_gon(:init => true) %>
+    <%= Gon::Base.render_data({}) %>
      <link href="//fonts.googleapis.com/css?family=Rancho" rel="stylesheet" type="text/css">
     <link href='//fonts.googleapis.com/css?family=Ubuntu:bold' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>

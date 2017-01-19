@@ -39,6 +39,7 @@ gem 'font-awesome-rails'
 gem 'sidekiq'
 gem 'jquery-countdown-rails'
 gem 'carrierwave-aws'
+gem 'gon'
 
 
 # Use Capistrano for deployment
