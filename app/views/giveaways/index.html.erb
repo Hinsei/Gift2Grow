@@ -21,9 +21,9 @@
 			<% if giveaways? %>
 				<% ongoing.each do |giveaway| %>
 					<div class="row">
-						<div class="col-md-8 col-md-offset-2">
+						<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 							<button type="button" class="btn btn-default btn-block mainbutton-3" data-toggle="modal" data-target="#myModal<%= giveaway.id %>">
-								<%= giveaway.title %>
+								<%= truncate(giveaway.title, length: 10) %>
 							</button>
 							<div class="modal fade" id="myModal<%= giveaway.id %>" tabindex="-1" role="dialog">
 								<div class="modal-dialog" role="document">
@@ -43,7 +43,7 @@
 												</h4>
 											</div>
 											<div class="row">
-												<div class="col-md-8 col-md-offset-2">
+												<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 													<p class="text-center black">
 														<%= giveaway.description %>
 													</p>
@@ -51,14 +51,14 @@
 											</div>
 											<div class="spacing"></div>
 											<div class="row">
-												<div class="col-md-8 col-md-offset-2">
+												<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 													<h4 class="text-center dashboardHeaderDecoration">
 														Preview your Giveaway Link:
 													</h4>
 												</div>
 											</div>
 											<div class="row">
-												<div class="col-md-8 col-md-offset-2">
+												<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 													<p class="text-center dashanswer black">
 														<%= link_to @url +"/"+ giveaway.link, company_giveaway_path(@company, giveaway) %>
 													</p>
@@ -66,14 +66,14 @@
 											</div>
 											<div class="spacing"></div>
 											<div class="row">
-												<div class="col-md-8 col-md-offset-2">
+												<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 													<h4 class="text-center dashboardHeaderDecoration">
 														Current Number of Participants In This Giveaway
 													</h4>
 												</div>
 											</div>
 											<div class="row">
-												<div class="col-md-8 col-md-offset-2">
+												<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 													<p class="text-center black">
 														<%= giveaway.participants.count %>
 													</p>
@@ -81,14 +81,14 @@
 											</div>
 											<div class="spacing"></div>
 											<div class="row">
-												<div class="col-md-8 col-md-offset-2">
+												<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 													<h4 class="text-center dashboardHeaderDecoration">
 														Current Number of Succesfull Shares
 													</h4>
 												</div>
 											</div>
 											<div class="row">
-												<div class="col-md-8 col-md-offset-2">
+												<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 													<p class="text-center black">
 														<%= giveaway.shares %>
 													</p>
@@ -142,9 +142,9 @@
 			<% if winner? %>
 				<% finished.each do |giveaway| %>
 					<div class="row">
-						<div class="col-md-8 col-md-offset-2">
+						<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 							<button type="button" class="btn btn-default btn-block mainbutton-3" data-toggle="modal" data-target="#myModal<%= giveaway.id %>">
-								<%= giveaway.title %>
+								<%= truncate(giveaway.title, length: 10) %>
 							</button>
 							<div class="modal fade" id="myModal<%= giveaway.id %>" tabindex="-1" role="dialog">
 								<div class="modal-dialog" role="document">
@@ -164,7 +164,7 @@
 												</h4>
 											</div>
 											<div class="row">
-												<div class="col-md-8 col-md-offset-2">
+												<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 													<p class="text-center black">
 														<%= giveaway.description %>
 													</p>
@@ -172,14 +172,14 @@
 											</div>
 											<div class="spacing"></div>
 											<div class="row">
-												<div class="col-md-8 col-md-offset-2">
+												<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 													<h4 class="text-center dashboardHeaderDecoration">
 														Total Number of Participants
 													</h4>
 												</div>
 											</div>
 											<div class="row">
-												<div class="col-md-8 col-md-offset-2">
+												<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 													<p class="text-center dashanswer black">
 														<%= giveaway.participants.count %>
 													</p>
@@ -187,14 +187,14 @@
 											</div>
 											<div class="spacing"></div>
 											<div class="row">
-												<div class="col-md-8 col-md-offset-2">
+												<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 													<h4 class="text-center dashboardHeaderDecoration">
 														Total Number of Shares
 													</h4>
 												</div>
 											</div>
 											<div class="row">
-												<div class="col-md-8 col-md-offset-2">
+												<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 													<p class="text-center black">
 														<%= giveaway.shares %>
 													</p>
@@ -213,10 +213,14 @@
 											<div class="spacing"></div>
 											<div class="divider"></div>
 											<div class="row">
-												<div class="col-md-8 col-md-offset-2">
+												<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
 													<h4 class="text-center dashboardHeaderDecoration">
 														Giveaway Performance
 													</h4>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-8 col-md-offset-2 col-xs-6 text-center">
 													<img src="https://s29.postimg.org/xnffhaoxz/stats_grey_2.jpg" alt="GA Stats" >
 												</div>
 											</div>
