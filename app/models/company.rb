@@ -12,6 +12,8 @@ class Company < ApplicationRecord
     validates :name, :uniqueness => {:message =>"name already exist"}
     validates :password, length: {minimum: 5}, presence: true, unless: "password.nil?"
 
+private
+
     def self.authenticate(email, password)
        company = Company.find_by(email: email)
         if company && company.authenticate(password)
