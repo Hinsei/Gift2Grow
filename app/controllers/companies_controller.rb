@@ -10,7 +10,9 @@ class CompaniesController < ApplicationController
     end
 
     def create
+      params[:company][:social_media_link] =  [] << params[:company][:social_media_link]
       @company =  Company.new(company_params)
+      byebug
        if @company.save
          session[:company_id] = @company.id
          redirect_to company_giveaways_path(@company)
@@ -26,6 +28,7 @@ class CompaniesController < ApplicationController
     end
 
     def update
+        params[:company][:social_media_link] =  [] << params[:company][:social_media_link]
         if @company.update(company_params)
         flash[:success] = "Info updated"
         redirect_to @company
@@ -44,7 +47,7 @@ class CompaniesController < ApplicationController
     private
 
     def company_params
-      params.require(:company).permit(:email, :name, :password, :password_confirmation, :website, :social_media_link, :address, :contact, :role)
+      params.require(:company).permit(:email, :name, :password, :password_confirmation, :website, :address, :contact, :role, :social_media_link => [])
     end
 
     def find_company
