@@ -56,7 +56,7 @@
 							None
 						</h3>
 					<% else %>
-						<%= @company.social_media_link.each do |link| %>
+						<% @company.social_media_link.each do |link| %>
 							<h3 class="text-center info">
 								<%= link %>
 						<% end %>
@@ -71,9 +71,9 @@
 					</h2>
 				</div>
 				<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
-					<h2 class="text-center info">
+					<h3 class="text-center info">
 						<%= @company.address %>
-					</h2>
+					</h3>
 				</div>
 			</div>
 			<div class="row">
