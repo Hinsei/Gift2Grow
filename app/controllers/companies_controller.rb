@@ -12,7 +12,6 @@ class CompaniesController < ApplicationController
     def create
       params[:company][:social_media_link] =  [] << params[:company][:social_media_link]
       @company =  Company.new(company_params)
-      byebug
        if @company.save
          session[:company_id] = @company.id
          redirect_to company_giveaways_path(@company)
